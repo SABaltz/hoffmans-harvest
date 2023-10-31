@@ -1,5 +1,5 @@
 export default function Work() {
-    return(
+    return (
         <div>test</div>
     )
 }
