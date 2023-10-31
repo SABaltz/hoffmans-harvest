@@ -1,14 +1,14 @@
 import {createTheme} from "@mui/material";
+import {primaryColor, secondaryColor, textColor} from "./GlobalParams";
 
-let textColor = '#dcdcdc'
 export const plantTheme = createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main: '#103f03',
+            main: primaryColor,
         },
         secondary: {
-            main: '#7a7a7a'
+            main: secondaryColor
         }
 
     },

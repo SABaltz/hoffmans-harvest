@@ -24,45 +24,45 @@ export default function NavBar() {
         <>
             {smallScreen ?
                 <>
-                    <Button
-                        id="basic-button"
-                        aria-controls={open ? 'basic-menu' : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? 'true' : undefined}
-                        onClick={anchorEl === null ? handleClick : handleClose}
+                    <Box sx={{backgroundColor: '#041f02'}}>
+                        <Button
+                            id="basic-button"
+                            aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={anchorEl === null ? handleClick : handleClose}
 
-                    >
-                        <MenuIcon fontSize="small"
-                                  sx={{
-                                      color: 'green',
-                                      fontSize: '3rem',
-                                  }}>
+                        >
+                            <MenuIcon fontSize="small"
+                                      sx={{
+                                          color: 'green',
+                                          fontSize: '3rem',
+                                      }}>
 
-                        </MenuIcon>
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={() => handleClose()}
-                            MenuListProps={{
-                                'aria-labelledby': 'basic-button',
-                            }}>
-                            {navOptions.map((option, index) => {
-                                return (
-                                    <MenuItem key={index} onClick={handleClose}>
-                                        <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
-                                            <Typography variant="h6" color={'black'} component="div"
-                                                        sx={{flexGrow: 1}}>
-                                                {option.toUpperCase()}
-                                            </Typography>
-                                        </Link>
-                                    </MenuItem>
-                                )
-                            })}
-                        </Menu>
-
-
-                    </Button>
+                            </MenuIcon>
+                            <Menu
+                                id="basic-menu"
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={() => handleClose()}
+                                MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                }}>
+                                {navOptions.map((option, index) => {
+                                    return (
+                                        <MenuItem key={index} onClick={handleClose}>
+                                            <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
+                                                <Typography variant="h6" color={'black'} component="div"
+                                                            sx={{flexGrow: 1}}>
+                                                    {option.toUpperCase()}
+                                                </Typography>
+                                            </Link>
+                                        </MenuItem>
+                                    )
+                                })}
+                            </Menu>
+                        </Button>
+                    </Box>
                 </>
                 :
 
