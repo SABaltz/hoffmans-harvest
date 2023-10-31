@@ -4,7 +4,7 @@ export const plantTheme = createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main: '#196904',
+            main: '#103f03',
         },
         secondary: {
             main: '#7a7a7a'
