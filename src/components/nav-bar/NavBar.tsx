@@ -2,11 +2,11 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import {Box, Link, Menu, MenuItem, useMediaQuery} from "@mui/material";
+import {Box, Grid, Link, Menu, MenuItem, useMediaQuery} from "@mui/material";
 import React, {useState} from "react";
 import {plantTheme} from "../../Theme";
 import MenuIcon from "@mui/icons-material/Menu";
-import {navOptions, websiteName} from "../../GlobalParams";
+import {navOptions, secondaryColor, websiteName} from "../../GlobalParams";
 
 export default function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
@@ -25,43 +25,55 @@ export default function NavBar() {
             {smallScreen ?
                 <>
                     <Box sx={{backgroundColor: '#041f02'}}>
-                        <Button
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={anchorEl === null ? handleClick : handleClose}
+                        <Grid container>
+                            <Grid item xs={ 4}>
+                                <Button
+                                    id="basic-button"
+                                    aria-controls={open ? 'basic-menu' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={open ? 'true' : undefined}
+                                    onClick={anchorEl === null ? handleClick : handleClose}
 
-                        >
-                            <MenuIcon fontSize="small"
-                                      sx={{
-                                          color: 'green',
-                                          fontSize: '3rem',
-                                      }}>
+                                >
+                                    <MenuIcon fontSize="small"
+                                              sx={{
+                                                  color: 'green',
+                                                  fontSize: '3rem',
+                                              }}>
 
-                            </MenuIcon>
-                            <Menu
-                                id="basic-menu"
-                                anchorEl={anchorEl}
-                                open={open}
-                                onClose={() => handleClose()}
-                                MenuListProps={{
-                                    'aria-labelledby': 'basic-button',
-                                }}>
-                                {navOptions.map((option, index) => {
-                                    return (
-                                        <MenuItem key={index} onClick={handleClose}>
-                                            <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
-                                                <Typography variant="h6" color={'black'} component="div"
-                                                            sx={{flexGrow: 1}}>
-                                                    {option.toUpperCase()}
-                                                </Typography>
-                                            </Link>
-                                        </MenuItem>
-                                    )
-                                })}
-                            </Menu>
-                        </Button>
+                                    </MenuIcon>
+                                    <Menu
+                                        id="basic-menu"
+                                        anchorEl={anchorEl}
+
+                                        open={open}
+                                        onClose={() => handleClose()}
+                                        MenuListProps={{
+                                            'aria-labelledby': 'basic-button',
+                                        }}>
+                                        {navOptions.map((option, index) => {
+                                            return (
+                                                <MenuItem
+                                                    sx={{backgroundColor: secondaryColor}}
+                                                    key={index} onClick={handleClose}>
+                                                    <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
+                                                        <Typography variant="h6" component="div"
+                                                                    sx={{flexGrow: 1}}>
+                                                            {option.toUpperCase()}
+                                                        </Typography>
+                                                    </Link>
+                                                </MenuItem>
+                                            )
+                                        })}
+                                    </Menu>
+                                </Button>
+                            </Grid>
+                            <Grid item xs={8}>
+                                <Typography sx={{marginTop: '.8rem'}}  variant={'h5'} >{websiteName}</Typography>
+                            </Grid>
+                        </Grid>
+
+
                     </Box>
                 </>
                 :
