@@ -2,11 +2,11 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import {Link, Menu, MenuItem, useMediaQuery} from "@mui/material";
-import Box from "@mui/material/Box";
+import {Box, Link, Menu, MenuItem, useMediaQuery} from "@mui/material";
 import React, {useState} from "react";
 import {plantTheme} from "../../Theme";
 import MenuIcon from "@mui/icons-material/Menu";
+import {navOptions, websiteName} from "../../GlobalParams";
 
 export default function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
@@ -39,58 +39,50 @@ export default function NavBar() {
                                   }}>
 
                         </MenuIcon>
+                        <Menu
+                            id="basic-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
+                            MenuListProps={{
+                                'aria-labelledby': 'basic-button',
+                            }}>
+                            {navOptions.map((option) => {
+                                return (
+                                    <MenuItem onClick={handleClose}>
+                                        <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
+                                            <Typography variant="h6" color={'black'} component="div"
+                                                        sx={{flexGrow: 1}}>
+                                                {option.toUpperCase()}
+                                            </Typography>
+                                        </Link>
+                                    </MenuItem>
+                                )
+                            })}
+                        </Menu>
+
+
                     </Button>
-                    <Menu
-                        id="basic-menu"
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={handleClose}
-                        MenuListProps={{
-                            'aria-labelledby': 'basic-button',
-                        }}
-
-                    >
-                        <MenuItem onClick={handleClose}>
-                            <Link href={`/home`} sx={{textDecoration: 'none'}}>
-                                <Typography variant="h6" color={'red'} component="div"
-                                            sx={{flexGrow: 1}}>
-                                    Home
-                                </Typography>
-                            </Link>
-                        </MenuItem>
-                    </Menu>
-                </> :
-
+                </>
+                :
 
                 <Box sx={{flexGrow: 1}}>
                     <AppBar position="static">
                         <Toolbar>
 
                             <Typography variant="h4" component="div" sx={{flexGrow: 1}}>
-                                Hoffman's Harvest
+                                {websiteName}
                             </Typography>
 
-
-                            <Button color="inherit">
-                                <Link href={'/home'}>
-                                    <Typography variant="h6">Home</Typography>
-                                </Link>
-                            </Button>
-                            <Button color="inherit">
-                                <Link href={'/about'}>
-                                    <Typography variant="h6">About</Typography>
-                                </Link>
-                            </Button>
-                            <Button color="inherit">
-                                <Link href={'/work'}>
-                                    <Typography variant="h6">My Work</Typography>
-                                </Link>
-                            </Button>
-                            <Button color="inherit">
-                                <Link href={'/contact'}>
-                                    <Typography variant="h6">Contact</Typography>
-                                </Link>
-                            </Button>
+                            {navOptions.map((option) => {
+                                return (
+                                    <Button color="inherit">
+                                        <Link href={`/${option}`}>
+                                            <Typography variant="h6">{option}</Typography>
+                                        </Link>
+                                    </Button>
+                                )
+                            })}
                         </Toolbar>
                     </AppBar>
                 </Box>
