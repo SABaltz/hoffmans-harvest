@@ -47,9 +47,9 @@ export default function NavBar() {
                             MenuListProps={{
                                 'aria-labelledby': 'basic-button',
                             }}>
-                            {navOptions.map((option) => {
+                            {navOptions.map((option, index) => {
                                 return (
-                                    <MenuItem onClick={handleClose}>
+                                    <MenuItem key={index} onClick={handleClose}>
                                         <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
                                             <Typography variant="h6" color={'black'} component="div"
                                                         sx={{flexGrow: 1}}>
@@ -74,9 +74,9 @@ export default function NavBar() {
                                 {websiteName}
                             </Typography>
 
-                            {navOptions.map((option) => {
+                            {navOptions.map((option, index) => {
                                 return (
-                                    <Button color="inherit">
+                                    <Button key={index} color="inherit">
                                         <Link href={`/${option}`}>
                                             <Typography variant="h6">{option}</Typography>
                                         </Link>
