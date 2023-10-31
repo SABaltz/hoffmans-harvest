@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import HomePage from "./components/home-page/HomePage";
 import {ThemeProvider} from "@mui/material";
-import {plantTheme} from "./theme";
+import {plantTheme} from "./Theme";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import About from "./components/about/About";
 import Work from "./components/work/Work";

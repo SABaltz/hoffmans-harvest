@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import {Link, Menu, MenuItem, useMediaQuery} from "@mui/material";
 import Box from "@mui/material/Box";
 import React, {useState} from "react";
-import {plantTheme} from "../../theme";
+import {plantTheme} from "../../Theme";
 import MenuIcon from "@mui/icons-material/Menu";
 
 export default function NavBar() {
