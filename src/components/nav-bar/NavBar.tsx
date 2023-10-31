@@ -29,7 +29,7 @@ export default function NavBar() {
                         aria-controls={open ? 'basic-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
-                        onClick={handleClick}
+                        onClick={anchorEl === null ? handleClick : handleClose}
 
                     >
                         <MenuIcon fontSize="small"
@@ -43,7 +43,7 @@ export default function NavBar() {
                             id="basic-menu"
                             anchorEl={anchorEl}
                             open={open}
-                            onClose={handleClose}
+                            onClose={() => handleClose()}
                             MenuListProps={{
                                 'aria-labelledby': 'basic-button',
                             }}>
