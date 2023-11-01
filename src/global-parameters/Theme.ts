@@ -1,5 +1,5 @@
 import {createTheme} from "@mui/material";
-import {primaryColor, secondaryColor, textColor} from "./GlobalParams";
+import {primaryColor, secondaryColor, textColor} from "./Parameters";
 
 export const plantTheme = createTheme({
     palette: {

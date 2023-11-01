@@ -4,9 +4,9 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {Box, Grid, Link, Menu, MenuItem, useMediaQuery} from "@mui/material";
 import React, {useState} from "react";
-import {plantTheme} from "../../Theme";
+import {plantTheme} from "../../global-parameters/Theme";
 import MenuIcon from "@mui/icons-material/Menu";
-import {navOptions, secondaryColor, textColor, websiteName} from "../../GlobalParams";
+import {navOptions, secondaryColor, textColor, websiteName} from "../../global-parameters/Parameters";
 
 export default function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
@@ -52,7 +52,7 @@ export default function NavBar() {
                                         MenuListProps={{
                                             'aria-labelledby': 'basic-button',
                                         }}>
-                                        {navOptions.map((option, index) => {
+                                        {navOptions.map((option: string, index: number) => {
                                             return (
                                                 <MenuItem
                                                     sx={{backgroundColor: secondaryColor}}
@@ -90,7 +90,7 @@ export default function NavBar() {
                                 </Link>
                             </Typography>
 
-                            {navOptions.map((option, index) => {
+                            {navOptions.map((option: string, index: number) => {
                                 return (
                                     <Button key={index} color="inherit">
                                         <Link href={`/${option}`}>

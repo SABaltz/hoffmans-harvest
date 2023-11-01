@@ -3,7 +3,7 @@ import React from "react";
 import terrariumWallpaper from "../../static/terranium-wallpaper.webp"
 import {Box, Grid} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import {textColor} from '../../global-parameters/GlobalParams'
+import {textColor} from '../../global-parameters/Parameters'
 
 export default function HomePage() {
     return (
@@ -36,10 +36,7 @@ export default function HomePage() {
                 sx={{
                     width: '100vw',
                     height: '30vh',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignContent: 'center',
-                    alignItems: 'center',
+                    // ...centerVertHoriz
                 }}>
                 <Grid container>
                     <Grid item xs={12}>Social Media</Grid>
