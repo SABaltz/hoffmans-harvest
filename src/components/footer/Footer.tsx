@@ -13,7 +13,7 @@ export default function Footer() {
                 <Toolbar>
                     <Stack>
                         {navOptions.map((option: string, index: number) => (
-                            <Typography variant='h6' component="div" sx={{flexGrow: 1}}>
+                            <Typography variant='h6' component="div" sx={{flexGrow: 1}} key={index}>
                                 <Link href={`${option}`}
                                       sx={{color: textColor}}>
                                     {option.toUpperCase()}
@@ -22,7 +22,8 @@ export default function Footer() {
                         ))}
                     </Stack>
                     <Stack>
-                        <Typography sx={{...centerVertHoriz}}>Copyright Hofffman's Harvest {new Date().getFullYear()}</Typography>
+                        <Typography sx={{...centerVertHoriz}}>Copyright Hofffman's
+                            Harvest {new Date().getFullYear()}</Typography>
                         <Typography sx={{...centerVertHoriz}}>All Rights Reserved</Typography>
                     </Stack>
                 </Toolbar>
