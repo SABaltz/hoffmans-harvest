@@ -34,9 +34,13 @@ export default function HomePage() {
                 <Box
                     sx={{
                         width: '100vw',
-                        height: '30vh'
+                        height: '30vh',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignContent: 'center',
+                        alignItems: 'center',
                     }}>
-                    <Grid container sx={{display: 'flex', justifyContent: 'center', alignContent: 'center', }}>
+                    <Grid container>
                         <Grid item xs={3}>Social Media</Grid>
                         <Grid item xs={3}>Insta</Grid>
                         <Grid item xs={3}>Tic</Grid>
