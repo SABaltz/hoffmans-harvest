@@ -22,8 +22,9 @@ export default function Footer() {
                         ))}
                     </Stack>
                     <Stack>
-                        <Typography sx={{...centerVertHoriz}}>Copyright Hofffman's
-                            Harvest {new Date().getFullYear()}</Typography>
+                        <Typography sx={{...centerVertHoriz}}>
+                            Copyright Hofffman's Harvest {new Date().getFullYear()}
+                        </Typography>
                         <Typography sx={{...centerVertHoriz}}>All Rights Reserved</Typography>
                     </Stack>
                 </Toolbar>

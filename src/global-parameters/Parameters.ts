@@ -9,4 +9,6 @@ const hoverColor = '#2a7310'
 
 const textColor = '#dcdcdc'
 
-export {websiteName, navOptions, primaryColor, secondaryColor, textColor, hoverColor}
+const textContrastColor = '#000000'
+
+export {websiteName, navOptions, primaryColor, secondaryColor, textColor, hoverColor, textContrastColor}
