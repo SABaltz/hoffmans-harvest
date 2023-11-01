@@ -1,5 +1,4 @@
 import React from "react";
-// import terrariumWallpaper from "../../static/terrarium-wallpaper.jxr";
 import terrariumWallpaper from "../../static/terranium-wallpaper.webp"
 import {Box, Grid} from "@mui/material";
 import Typography from "@mui/material/Typography";
