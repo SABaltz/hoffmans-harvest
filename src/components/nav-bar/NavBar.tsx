@@ -23,6 +23,7 @@ export default function NavBar() {
     return (
         <>
             {smallScreen ?
+                // ------------------------------------------Small Screen-----------------------------------------
                 <>
                     <Box sx={{backgroundColor: '#041f02'}}>
                         <Grid container>
@@ -77,6 +78,7 @@ export default function NavBar() {
                     </Box>
                 </>
                 :
+                // ------------------------------------------Large Screen-----------------------------------------
 
                 <Box sx={{flexGrow: 1}}>
                     <AppBar position="static">
