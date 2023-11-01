@@ -3,7 +3,7 @@ import React from "react";
 import terrariumWallpaper from "../../static/terranium-wallpaper.webp"
 import {Box, Grid} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import {textColor, textContrastColor} from '../../global-parameters/Parameters'
+import { textContrastColor} from '../../global-parameters/Parameters'
 import {centerVertHoriz} from "../../global-parameters/Styles";
 
 export default function HomePage() {
@@ -23,7 +23,7 @@ export default function HomePage() {
 
                 <Typography
                     variant="h3"
-                    color={textColor}
+                    color={textContrastColor}
                     sx={{
                         textAlign: 'center',
                         paddingTop: '15rem'
