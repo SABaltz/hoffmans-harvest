@@ -3,7 +3,7 @@ const navOptions = ['home', 'work', 'about', 'contact']
 
 const primaryColor = '#041f02'
 
-const secondaryColor = '#237c18'
+const secondaryColor = '#88e17c'
 
 const hoverColor = '#2a7310'
 
