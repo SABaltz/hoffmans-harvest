@@ -6,7 +6,7 @@ import {Box, Grid, Link, Menu, MenuItem, useMediaQuery} from "@mui/material";
 import React, {useState} from "react";
 import {plantTheme} from "../../Theme";
 import MenuIcon from "@mui/icons-material/Menu";
-import {navOptions, secondaryColor, websiteName} from "../../GlobalParams";
+import {navOptions, secondaryColor, textColor, websiteName} from "../../GlobalParams";
 
 export default function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
@@ -27,7 +27,7 @@ export default function NavBar() {
                 <>
                     <Box sx={{backgroundColor: '#041f02'}}>
                         <Grid container>
-                            <Grid item xs={ 4}>
+                            <Grid item xs={4}>
                                 <Button
                                     id="basic-button"
                                     aria-controls={open ? 'basic-menu' : undefined}
@@ -70,7 +70,7 @@ export default function NavBar() {
                                 </Button>
                             </Grid>
                             <Grid item xs={8}>
-                                <Typography sx={{marginTop: '.8rem'}}  variant={'h5'} >{websiteName}</Typography>
+                                <Typography sx={{marginTop: '.8rem'}} variant={'h5'}>{websiteName}</Typography>
                             </Grid>
                         </Grid>
 
@@ -85,7 +85,9 @@ export default function NavBar() {
                         <Toolbar>
 
                             <Typography variant="h4" component="div" sx={{flexGrow: 1}}>
-                                {websiteName}
+                                <Link href={'/home'} sx={{color: textColor, textDecoration: 'none'}}>
+                                    {websiteName}
+                                </Link>
                             </Typography>
 
                             {navOptions.map((option, index) => {
