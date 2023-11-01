@@ -4,6 +4,7 @@ import terrariumWallpaper from "../../static/terranium-wallpaper.webp"
 import {Box, Grid} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {textColor} from '../../global-parameters/Parameters'
+import {centerVertHoriz} from "../../global-parameters/Styles";
 
 export default function HomePage() {
     return (
@@ -36,13 +37,15 @@ export default function HomePage() {
                 sx={{
                     width: '100vw',
                     height: '30vh',
-                    // ...centerVertHoriz
+                    ...centerVertHoriz
                 }}>
                 <Grid container>
-                    <Grid item xs={12}>Social Media</Grid>
-                    <Grid item xs={3}>Instagram</Grid>
-                    <Grid item xs={3}>Tic</Grid>
-                    <Grid item xs={3}>Facebook</Grid>
+                    <Grid item xs={12} sx={{...centerVertHoriz, paddingBottom: '2rem'}}>Social Media</Grid>
+                    <Grid container sx={{...centerVertHoriz}}>
+                        <Grid item xs={4}>Instagram</Grid>
+                        <Grid item xs={4}>Tic Tok</Grid>
+                        <Grid item xs={4}>Facebook</Grid>
+                    </Grid>
 
                 </Grid>
 
