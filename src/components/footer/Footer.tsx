@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import {centerVertHoriz} from "../../global-parameters/Styles";
 
 export default function Footer() {
+
     return (
         <>
             <AppBar position="static">
@@ -21,7 +22,7 @@ export default function Footer() {
                         ))}
                     </Stack>
                     <Stack>
-                        <Typography sx={{...centerVertHoriz}}>Copyright Hofffman's Harvest 2023</Typography>
+                        <Typography sx={{...centerVertHoriz}}>Copyright Hofffman's Harvest {new Date().getFullYear()}</Typography>
                         <Typography sx={{...centerVertHoriz}}>All Rights Reserved</Typography>
                     </Stack>
                 </Toolbar>
