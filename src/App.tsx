@@ -8,6 +8,7 @@ import About from "./components/about/About";
 import Work from "./components/work/Work";
 import Contact from "./components/contact/Contact";
 import NavBar from "./components/nav-bar/NavBar";
+import Footer from "./components/footer/Footer";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/contact" element={<><Contact/></>}></Route>
                 </Routes>
             </BrowserRouter>
+            <Footer/>
         </ThemeProvider>
     );
 }
