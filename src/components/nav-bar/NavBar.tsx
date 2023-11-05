@@ -94,7 +94,8 @@ export default function NavBar() {
                                 return (
                                     <Button key={index} color="inherit">
                                         <Link href={`/${option}`}>
-                                            <Typography variant="h6" sx={{textDecoration: currentPage === option.toUpperCase() ? 'underline': ''}}>{option}</Typography>
+                                            <Typography variant="h6"
+                                                        sx={{textDecoration: currentPage === option.toUpperCase() ? 'underline' : currentPage === '' && option === 'home' ? 'underline' : ''}}>{option}</Typography>
                                         </Link>
                                     </Button>
                                 )
