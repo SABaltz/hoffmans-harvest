@@ -10,7 +10,7 @@ import {navOptions, secondaryColor, textColor, websiteName} from "../../global-p
 
 export default function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
-
+    const currentPage = window.location.href.toString().split('/')[3].toUpperCase()
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: any) => {
@@ -94,7 +94,7 @@ export default function NavBar() {
                                 return (
                                     <Button key={index} color="inherit">
                                         <Link href={`/${option}`}>
-                                            <Typography variant="h6">{option}</Typography>
+                                            <Typography variant="h6" sx={{textDecoration: currentPage == option.toUpperCase() ? 'underline': ''}}>{option}</Typography>
                                         </Link>
                                     </Button>
                                 )
