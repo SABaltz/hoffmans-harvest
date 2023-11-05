@@ -4,6 +4,7 @@ import {Box, Grid} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {secondaryColor, textContrastColor} from '../../global-parameters/Parameters'
 import {centerVertHoriz} from "../../global-parameters/Styles";
+import {SocialIcon} from "react-social-icons";
 
 export default function HomePage() {
     return (
@@ -46,9 +47,9 @@ export default function HomePage() {
                         </Typography>
                     </Grid>
                     <Grid container sx={{...centerVertHoriz}}>
-                        <Grid sx={{...centerVertHoriz}} item xs={4}>Instagram</Grid>
-                        <Grid sx={{...centerVertHoriz}} item xs={4}>Tic Tok</Grid>
-                        <Grid sx={{...centerVertHoriz}} item xs={4}>Facebook</Grid>
+                        <Grid sx={{...centerVertHoriz}} item xs={4}><SocialIcon url="www.facebook.com" /></Grid>
+                        <Grid sx={{...centerVertHoriz}} item xs={4}><SocialIcon url="www.instagram.com" /></Grid>
+                        <Grid sx={{...centerVertHoriz}} item xs={4}><SocialIcon url="www.tiktok.com" /></Grid>
                     </Grid>
 
                 </Grid>
