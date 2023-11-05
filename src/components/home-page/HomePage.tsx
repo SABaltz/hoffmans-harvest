@@ -37,6 +37,8 @@ export default function HomePage() {
                 sx={{
                     width: '100vw',
                     height: '30vh',
+                    paddingBottom: '3rem',
+                    paddingTop: '3rem',
                     backgroundColor: secondaryColor,
                     ...centerVertHoriz
                 }}>
@@ -46,7 +48,7 @@ export default function HomePage() {
                             Social Media
                         </Typography>
                     </Grid>
-                    <Grid container sx={{...centerVertHoriz}}>
+                    <Grid container xs={12} sx={{...centerVertHoriz}}>
                         <Grid sx={{...centerVertHoriz}} item xs={4}><SocialIcon url="www.facebook.com" /></Grid>
                         <Grid sx={{...centerVertHoriz}} item xs={4}><SocialIcon url="www.instagram.com" /></Grid>
                         <Grid sx={{...centerVertHoriz}} item xs={4}><SocialIcon url="www.tiktok.com" /></Grid>
