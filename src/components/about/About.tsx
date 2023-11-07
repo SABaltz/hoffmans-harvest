@@ -1,5 +1,7 @@
-export default function About() {
+function About() {
     return (
         <div>test</div>
     )
 }
+
+export default About;
