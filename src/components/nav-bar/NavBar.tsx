@@ -55,14 +55,19 @@ export default function NavBar() {
                                         {navOptions.map((option: string, index: number) => {
                                             return (
                                                 <MenuItem
-                                                    sx={{backgroundColor: secondaryColor,
+                                                    sx={{
+                                                        backgroundColor: secondaryColor,
                                                         '&:active': {
                                                             backgroundColor: primaryColor,
-                                                        }}}
+                                                        }
+                                                    }}
                                                     key={index} onClick={handleClose}>
                                                     <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
                                                         <Typography variant="h6" component="div"
-                                                                    sx={{flexGrow: 1, textDecoration: currentPage === option.toUpperCase() ? 'underline' : currentPage === '' && option === 'home' ? 'underline' : ''}}>
+                                                                    sx={{
+                                                                        flexGrow: 1,
+                                                                        textDecoration: currentPage === option.toUpperCase() ? 'underline' : currentPage === '' && option === 'home' ? 'underline' : ''
+                                                                    }}>
                                                             {option.toUpperCase()}
                                                         </Typography>
                                                     </Link>
