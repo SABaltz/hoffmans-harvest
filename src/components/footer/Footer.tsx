@@ -1,34 +1,34 @@
-import {navOptions, textColor} from "../../global-parameters/Parameters";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import {Link, Stack} from "@mui/material";
-import Typography from "@mui/material/Typography";
-import {centerVertHoriz} from "../../global-parameters/Styles";
+import React from 'react';
+import { navOptions, textColor } from '../../global-parameters/Parameters';
+import { AppBar, Toolbar, Link, Stack, Typography } from '@mui/material';
+import { centerVertHoriz } from '../../global-parameters/Styles';
 
 export default function Footer() {
+    const currentYear = new Date().getFullYear();
 
     return (
-        <>
-            <AppBar position="static">
-                <Toolbar>
-                    <Stack>
-                        {navOptions.map((option: string, index: number) => (
-                            <Typography variant='h6' component="div" sx={{flexGrow: 1}} key={index}>
-                                <Link href={`${option}`}
-                                      sx={{color: textColor}}>
-                                    {option.toUpperCase()}
-                                </Link>
-                            </Typography>
-                        ))}
-                    </Stack>
-                    <Stack>
-                        <Typography sx={{...centerVertHoriz}}>
-                            Copyright Hofffman's Harvest {new Date().getFullYear()}
+        <AppBar position="static">
+            <Toolbar>
+                <Stack
+                    direction="row"
+                    spacing={2}
+                    flexGrow={1}
+                >
+                    {navOptions.map((option, index) => (
+                        <Typography key={index} variant="h6" component="div">
+                            <Link href={option} sx={{ color: textColor }}>
+                                {option.toUpperCase()}
+                            </Link>
                         </Typography>
-                        <Typography sx={{...centerVertHoriz}}>All Rights Reserved</Typography>
-                    </Stack>
-                </Toolbar>
-            </AppBar>
-        </>
-    )
+                    ))}
+                </Stack>
+                <Stack>
+                    <Typography sx={centerVertHoriz}>
+                        Copyright Hofffman's Harvest {currentYear}
+                    </Typography>
+                    <Typography sx={centerVertHoriz}>All Rights Reserved</Typography>
+                </Stack>
+            </Toolbar>
+        </AppBar>
+    );
 }
