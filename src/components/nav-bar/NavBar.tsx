@@ -6,7 +6,7 @@ import {Box, Grid, Link, Menu, MenuItem, useMediaQuery} from "@mui/material";
 import React, {useState} from "react";
 import {plantTheme} from "../../global-parameters/Theme";
 import MenuIcon from "@mui/icons-material/Menu";
-import {navOptions, secondaryColor, textColor, websiteName} from "../../global-parameters/Parameters";
+import {navOptions, primaryColor, secondaryColor, textColor, websiteName} from "../../global-parameters/Parameters";
 
 export default function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
@@ -55,7 +55,10 @@ export default function NavBar() {
                                         {navOptions.map((option: string, index: number) => {
                                             return (
                                                 <MenuItem
-                                                    sx={{backgroundColor: secondaryColor}}
+                                                    sx={{backgroundColor: secondaryColor,
+                                                        '&:active': {
+                                                            backgroundColor: primaryColor,
+                                                        }}}
                                                     key={index} onClick={handleClose}>
                                                     <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
                                                         <Typography variant="h6" component="div"
