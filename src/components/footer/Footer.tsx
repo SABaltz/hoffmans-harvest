@@ -3,7 +3,7 @@ import { navOptions, textColor } from '../../global-parameters/Parameters';
 import { AppBar, Toolbar, Link, Stack, Typography } from '@mui/material';
 import { centerVertHoriz } from '../../global-parameters/Styles';
 
-export default function Footer() {
+function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -32,3 +32,5 @@ export default function Footer() {
         </AppBar>
     );
 }
+
+export default Footer;
