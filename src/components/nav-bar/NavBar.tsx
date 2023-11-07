@@ -27,7 +27,7 @@ function NavBar() {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
-    const handleMenuClick = (event) => {
+    const handleMenuClick = (event: any) => {
         setAnchorEl(event.currentTarget);
     };
 
