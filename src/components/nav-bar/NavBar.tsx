@@ -62,7 +62,7 @@ export default function NavBar() {
                                                     key={index} onClick={handleClose}>
                                                     <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
                                                         <Typography variant="h6" component="div"
-                                                                    sx={{flexGrow: 1}}>
+                                                                    sx={{flexGrow: 1, textDecoration: currentPage === option.toUpperCase() ? 'underline' : currentPage === '' && option === 'home' ? 'underline' : ''}}>
                                                             {option.toUpperCase()}
                                                         </Typography>
                                                     </Link>
