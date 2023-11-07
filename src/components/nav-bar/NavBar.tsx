@@ -1,25 +1,8 @@
-import React, { useState } from 'react';
-import {
-    AppBar,
-    Toolbar,
-    Typography,
-    Button,
-    Box,
-    Grid,
-    Link,
-    Menu,
-    MenuItem,
-    useMediaQuery,
-} from '@mui/material';
+import React, {useState} from 'react';
+import {AppBar, Box, Button, Grid, Link, Menu, MenuItem, Toolbar, Typography, useMediaQuery,} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { plantTheme } from '../../global-parameters/Theme';
-import {
-    navOptions,
-    primaryColor,
-    secondaryColor,
-    textColor,
-    websiteName,
-} from '../../global-parameters/Parameters';
+import {plantTheme} from '../../global-parameters/Theme';
+import {navOptions, primaryColor, secondaryColor, textColor, websiteName,} from '../../global-parameters/Parameters';
 
 function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
@@ -38,8 +21,8 @@ function NavBar() {
     return (
         <>
             {smallScreen ? (
-                // Small Screen
-                <Box sx={{ backgroundColor: '#041f02' }}>
+                // Small Screen ------------------------------------------------------------------------------
+                <Box sx={{backgroundColor: '#041f02'}}>
                     <Grid container>
                         <Grid item xs={4}>
                             <Button
@@ -76,7 +59,7 @@ function NavBar() {
                                             key={index}
                                             onClick={handleMenuClose}
                                         >
-                                            <Link href={`/${option}`} sx={{ textDecoration: 'none' }}>
+                                            <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
                                                 <Typography
                                                     variant="h6"
                                                     component="div"
@@ -99,19 +82,19 @@ function NavBar() {
                             </Button>
                         </Grid>
                         <Grid item xs={8}>
-                            <Typography sx={{ marginTop: '.8rem' }} variant="h5">
+                            <Typography sx={{marginTop: '.8rem'}} variant="h5">
                                 {websiteName}
                             </Typography>
                         </Grid>
                     </Grid>
                 </Box>
             ) : (
-                // Large Screen
-                <Box sx={{ flexGrow: 1 }}>
+                // Large Screen ------------------------------------------------------------------------------
+                <Box sx={{flexGrow: 1}}>
                     <AppBar position="static">
                         <Toolbar>
-                            <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
-                                <Link href="/home" sx={{ color: textColor, textDecoration: 'none' }}>
+                            <Typography variant="h4" component="div" sx={{flexGrow: 1}}>
+                                <Link href={"/home"} sx={{color: textColor, textDecoration: 'none'}}>
                                     {websiteName}
                                 </Link>
                             </Typography>
@@ -121,11 +104,11 @@ function NavBar() {
                                         <Typography
                                             variant="h6"
                                             sx={{
-                                                textDecoration:
+                                                borderBottom:
                                                     currentPage === option.toUpperCase()
-                                                        ? 'underline'
+                                                        ? '.1rem solid white'
                                                         : currentPage === '' && option === 'home'
-                                                            ? 'underline'
+                                                            ? '.1rem solid white'
                                                             : '',
                                             }}
                                         >

@@ -1,7 +1,7 @@
 import React from 'react';
-import { navOptions, textColor } from '../../global-parameters/Parameters';
-import { AppBar, Toolbar, Link, Stack, Typography } from '@mui/material';
-import { centerVertHoriz } from '../../global-parameters/Styles';
+import {navOptions, textColor} from '../../global-parameters/Parameters';
+import {AppBar, Link, Stack, Toolbar, Typography} from '@mui/material';
+import {centerVertHoriz} from '../../global-parameters/Styles';
 
 function Footer() {
     const currentYear = new Date().getFullYear();
@@ -16,7 +16,7 @@ function Footer() {
                 >
                     {navOptions.map((option, index) => (
                         <Typography key={index} variant="h6" component="div">
-                            <Link href={option} sx={{ color: textColor }}>
+                            <Link href={option} sx={{color: textColor}}>
                                 {option.toUpperCase()}
                             </Link>
                         </Typography>

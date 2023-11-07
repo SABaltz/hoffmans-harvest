@@ -1,9 +1,9 @@
 import React from 'react';
-import { Box, Grid } from '@mui/material';
+import {Box, Grid} from '@mui/material';
 import Typography from '@mui/material/Typography';
-import { secondaryColor, textContrastColor } from '../../global-parameters/Parameters';
-import { centerVertHoriz } from '../../global-parameters/Styles';
-import { SocialIcon } from 'react-social-icons';
+import {secondaryColor, textContrastColor} from '../../global-parameters/Parameters';
+import {centerVertHoriz} from '../../global-parameters/Styles';
+import {SocialIcon} from 'react-social-icons';
 import terrariumWallpaper from '../../static/terranium-wallpaper.webp';
 
 function HomePage() {
@@ -41,15 +41,15 @@ function HomePage() {
                 }}
             >
                 <Grid container>
-                    <Grid item xs={12} sx={{ ...centerVertHoriz, paddingBottom: '5rem' }}>
+                    <Grid item xs={12} sx={{...centerVertHoriz, paddingBottom: '5rem'}}>
                         <Typography variant="h3" color={textContrastColor}>
                             Social Media
                         </Typography>
                     </Grid>
-                    <Grid container xs={12} sx={{ ...centerVertHoriz }}>
+                    <Grid container xs={12} sx={{...centerVertHoriz}}>
                         {socialMediaLinks.map((link, index) => (
                             <Grid key={index} sx={centerVertHoriz} item xs={2}>
-                                <SocialIcon url={link.url} href={link.href} />
+                                <SocialIcon url={link.url} href={link.href}/>
                             </Grid>
                         ))}
                     </Grid>
