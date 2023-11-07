@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Grid} from '@mui/material';
 import Typography from '@mui/material/Typography';
-import {secondaryColor, textContrastColor} from '../../global-parameters/Parameters';
+import {secondaryColor, socialMediaLinks, textContrastColor} from '../../global-parameters/Parameters';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {SocialIcon} from 'react-social-icons';
 import terrariumWallpaper from '../../static/terranium-wallpaper.webp';
@@ -59,22 +59,6 @@ function HomePage() {
     );
 }
 
-const socialMediaLinks = [
-    {
-        name: 'Facebook',
-        url: 'www.facebook.com',
-        href: 'https://www.facebook.com/people/Hoffmans-Harvest/61552764039490/',
-    },
-    {
-        name: 'Instagram',
-        url: 'www.instagram.com',
-        href: 'https://www.instagram.com',
-    },
-    {
-        name: 'TikTok',
-        url: 'www.tiktok.com',
-        href: 'https://www.tiktok.com',
-    },
-];
+
 
 export default HomePage;

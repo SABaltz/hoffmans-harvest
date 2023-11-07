@@ -1,7 +1,8 @@
 import React from 'react';
-import {navOptions, textColor} from '../../global-parameters/Parameters';
-import {AppBar, Grid, Link, Stack, Toolbar, Typography} from '@mui/material';
+import {navOptions, socialMediaLinks, textColor} from '../../global-parameters/Parameters';
+import {AppBar, Box, Grid, Link, Stack, Toolbar, Typography} from '@mui/material';
 import {centerVertHoriz} from '../../global-parameters/Styles';
+import {SocialIcon} from "react-social-icons";
 
 function Footer() {
     const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ function Footer() {
         <AppBar position="static">
             <Toolbar>
                 <Grid container>
-                    <Grid item xs={6} sx={{...centerVertHoriz}}>
+                    <Grid item xs={4} sx={{...centerVertHoriz}}>
                         <Stack
                             flexGrow={1}
                             sx={{...centerVertHoriz}}
@@ -25,7 +26,20 @@ function Footer() {
                             ))}
                         </Stack>
                     </Grid>
-                    <Grid item xs={6} sx={{...centerVertHoriz}}>
+                    <Grid item xs={4} sx={{...centerVertHoriz}}>
+                        <Stack>
+                            <Typography variant={'h5'} sx={centerVertHoriz}>
+                                Follow Me
+                            </Typography>
+                            {socialMediaLinks.map((link, index) => (
+                                <Box sx={{...centerVertHoriz, marginBottom: '.5rem'}}>
+                                    <SocialIcon style={{width: '2rem', height: '2rem'}} url={link.url}
+                                                href={link.href}/>
+                                </Box>
+                            ))}
+                        </Stack>
+                    </Grid>
+                    <Grid item xs={4} sx={{...centerVertHoriz}}>
                         <Stack>
                             <Typography sx={centerVertHoriz}>
                                 &copy;  Hofffman's Harvest {currentYear}

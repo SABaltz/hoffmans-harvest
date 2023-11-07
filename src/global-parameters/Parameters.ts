@@ -11,4 +11,22 @@ const textColor = '#dcdcdc'
 
 const textContrastColor = '#000000'
 
-export {websiteName, navOptions, primaryColor, secondaryColor, textColor, hoverColor, textContrastColor}
+const socialMediaLinks = [
+    {
+        name: 'Facebook',
+        url: 'www.facebook.com',
+        href: 'https://www.facebook.com/people/Hoffmans-Harvest/61552764039490/',
+    },
+    {
+        name: 'Instagram',
+        url: 'www.instagram.com',
+        href: 'https://www.instagram.com',
+    },
+    {
+        name: 'TikTok',
+        url: 'www.tiktok.com',
+        href: 'https://www.tiktok.com',
+    },
+];
+
+export {websiteName, navOptions, primaryColor, secondaryColor, textColor, hoverColor, textContrastColor, socialMediaLinks}
