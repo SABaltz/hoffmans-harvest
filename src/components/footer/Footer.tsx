@@ -28,7 +28,7 @@ function Footer() {
                     <Grid item xs={6} sx={{...centerVertHoriz}}>
                         <Stack>
                             <Typography sx={centerVertHoriz}>
-                                Copyright Hofffman's Harvest {currentYear}
+                                &copy;  Hofffman's Harvest {currentYear}
                             </Typography>
                             <Typography sx={centerVertHoriz}>All Rights Reserved</Typography>
                         </Stack>
