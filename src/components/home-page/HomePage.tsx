@@ -49,9 +49,9 @@ export default function HomePage() {
                         </Typography>
                     </Grid>
                     <Grid container xs={12} sx={{...centerVertHoriz}}>
-                        <Grid sx={{...centerVertHoriz}} item xs={4}><SocialIcon url="www.facebook.com" href={`https://www.facebook.com/people/Hoffmans-Harvest/61552764039490/`} /></Grid>
-                        <Grid sx={{...centerVertHoriz}} item xs={4}><SocialIcon url="www.instagram.com" href={`https://www.instagram.com`} /></Grid>
-                        <Grid sx={{...centerVertHoriz}} item xs={4}><SocialIcon url="www.tiktok.com" href={`https://www.tiktok.com`} /></Grid>
+                        <Grid sx={{...centerVertHoriz}} item xs={2}><SocialIcon url="www.facebook.com" href={`https://www.facebook.com/people/Hoffmans-Harvest/61552764039490/`} /></Grid>
+                        <Grid sx={{...centerVertHoriz}} item xs={2}><SocialIcon url="www.instagram.com" href={`https://www.instagram.com`} /></Grid>
+                        <Grid sx={{...centerVertHoriz}} item xs={2}><SocialIcon url="www.tiktok.com" href={`https://www.tiktok.com`} /></Grid>
                     </Grid>
 
                 </Grid>
