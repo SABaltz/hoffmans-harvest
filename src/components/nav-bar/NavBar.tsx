@@ -54,7 +54,7 @@ function NavBar() {
                                                 backgroundColor: secondaryColor,
                                                 '&:active': {
                                                     backgroundColor: primaryColor,
-                                                },
+                                                }
                                             }}
                                             key={index}
                                             onClick={handleMenuClose}
@@ -104,12 +104,17 @@ function NavBar() {
                                         <Typography
                                             variant="h6"
                                             sx={{
+                                                color: currentPage === option.toUpperCase() ? secondaryColor : textColor,
                                                 borderBottom:
                                                     currentPage === option.toUpperCase()
-                                                        ? '.1rem solid white'
+                                                        ? `.1rem solid ${secondaryColor}`
                                                         : currentPage === '' && option === 'home'
-                                                            ? '.1rem solid white'
+                                                            ? `.1rem solid ${textColor}`
                                                             : '',
+
+                                                '&:hover': {
+                                                    color: secondaryColor,
+                                                },
                                             }}
                                         >
                                             {option}

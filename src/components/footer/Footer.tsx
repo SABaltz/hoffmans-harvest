@@ -9,7 +9,6 @@ import {
 import {AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography} from '@mui/material';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {SocialIcon} from "react-social-icons";
-import {redirect} from "react-router";
 
 function Footer() {
     const currentYear = new Date().getFullYear();
@@ -88,7 +87,7 @@ function Footer() {
                                     Follow Me
                                 </Typography>
                                 {socialMediaLinks.map((link, index) => (
-                                    <Box sx={{...centerVertHoriz, marginBottom: '.5rem'}}>
+                                    <Box sx={{...centerVertHoriz, marginBottom: '.5rem'}} key={index}>
                                         <SocialIcon style={{width: '2rem', height: '2rem'}} url={link.url}
                                                     href={link.href}/>
                                     </Box>
