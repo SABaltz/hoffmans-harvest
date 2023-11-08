@@ -10,6 +10,7 @@ import {AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography} from '@mui/
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {SocialIcon} from "react-social-icons";
 import {ArrowBack, ArrowForward} from "@mui/icons-material";
+import {redirect} from "react-router";
 
 function Footer() {
     const currentYear = new Date().getFullYear();
@@ -43,7 +44,7 @@ function Footer() {
                         <Grid item xs={6} sx={{...centerVertHoriz}}>
                             <Button
                                 onClick={() => {
-                                    console.log('click')
+                                    redirect('www.test.com')
                                 }}
                                 sx={{
                                     color: textContrastColor,
@@ -53,8 +54,9 @@ function Footer() {
                                         backgroundColor: secondaryColor,
                                     }
                                 }}>
-
-                                <Typography>Go to Portal</Typography>
+                                <Link href={`/portal`} sx={{textDecoration: 'none'}}>
+                                    <Typography>Go to Portal</Typography>
+                                </Link>
 
                             </Button>
                         </Grid>

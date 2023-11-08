@@ -1,6 +1,6 @@
 function Portal() {
     return (
-        <div>test</div>
+        <div>Portal</div>
     )
 }
 
