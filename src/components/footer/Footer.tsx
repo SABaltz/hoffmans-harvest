@@ -9,6 +9,7 @@ import {
 import {AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography} from '@mui/material';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {SocialIcon} from "react-social-icons";
+import {ArrowBack, ArrowForward} from "@mui/icons-material";
 
 function Footer() {
     const currentYear = new Date().getFullYear();
@@ -44,10 +45,17 @@ function Footer() {
                                 onClick={() => {
                                     console.log('click')
                                 }}
-                                sx={{color: textContrastColor, backgroundColor: secondaryColor, display: 'block' , '&:hover': {
+                                sx={{
+                                    color: textContrastColor,
+                                    backgroundColor: secondaryColor,
+                                    display: 'block',
+                                    '&:hover': {
                                         backgroundColor: secondaryColor,
-                                    },}}>
-                                Go to Portal
+                                    }
+                                }}>
+
+                                <Typography>Go to Portal</Typography>
+
                             </Button>
                         </Grid>
                     </Grid>
