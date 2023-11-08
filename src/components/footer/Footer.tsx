@@ -14,6 +14,7 @@ function Footer() {
     const currentYear = new Date().getFullYear();
     const [passSequence, setPassSequence] = useState(0)
     const [showPortal, setShowPortal] = useState(false)
+    const currentPage = window.location.href.toString().split('/')[3].toUpperCase();
 
     function resetPassSequence() {
 
@@ -71,11 +72,23 @@ function Footer() {
                                         setPassSequence(0)
                                 }}>Navigation</Typography>
                                 {navOptions.map((option, index) => (
-                                    <Typography key={index} variant={'subtitle1'} component="div">
-                                        <Link href={option} sx={{color: textColor}}>
+                                    <Link href={option}>
+                                        <Typography key={index} variant={'subtitle1'} component="div"
+                                                    sx={{
+                                                        color: currentPage === option.toUpperCase() ? secondaryColor : textColor,
+                                                        borderBottom:
+                                                            currentPage === option.toUpperCase()
+                                                                ? `.1rem solid ${secondaryColor}`
+                                                                : currentPage === '' && option === 'home'
+                                                                    ? `.1rem solid ${textColor}`
+                                                                    : '',
+                                                        '&:hover': {
+                                                            color: secondaryColor,
+                                                        },
+                                                    }}>
                                             {option.toUpperCase()}
-                                        </Link>
-                                    </Typography>
+                                        </Typography>
+                                    </Link>
                                 ))}
                             </Stack>
                         </Grid>

@@ -111,7 +111,6 @@ function NavBar() {
                                                         : currentPage === '' && option === 'home'
                                                             ? `.1rem solid ${textColor}`
                                                             : '',
-
                                                 '&:hover': {
                                                     color: secondaryColor,
                                                 },
