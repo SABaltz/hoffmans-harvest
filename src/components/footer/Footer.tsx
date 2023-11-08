@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {
-    navOptions,
+    navOptions, primaryColor,
     secondaryColor,
     socialMediaLinks,
     textColor,
@@ -36,7 +36,7 @@ function Footer() {
                         <Grid item xs={6} sx={{...centerVertHoriz}}>
                             <Stack>
                                 <Typography>Hello Mr. Hoffman</Typography>
-                                <Typography>Welcome to your website</Typography>
+                                <Typography>Welcome to Your Website</Typography>
                             </Stack>
                         </Grid>
                         <Grid item xs={6} sx={{...centerVertHoriz}}>
@@ -44,7 +44,9 @@ function Footer() {
                                 onClick={() => {
                                     console.log('click')
                                 }}
-                                sx={{color: textContrastColor, backgroundColor: secondaryColor, display: 'block'}}>
+                                sx={{color: textContrastColor, backgroundColor: secondaryColor, display: 'block' , '&:hover': {
+                                        backgroundColor: secondaryColor,
+                                    },}}>
                                 Go to Portal
                             </Button>
                         </Grid>
