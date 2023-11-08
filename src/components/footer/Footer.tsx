@@ -9,11 +9,25 @@ function Footer() {
     const [passSequence, setPassSequence] = useState(0)
     const [showPortal, setShowPortal] = useState(false)
 
+    function resetPassSequence() {
+
+        if (passSequence === .599) {
+            setShowPortal(true)
+        } else {
+            setShowPortal(false)
+        }
+
+        setPassSequence(0)
+    }
+
     // useEffect()
     return (
         <AppBar position="static">
             <Toolbar>
-                {showPortal ? <div>test1</div> : <div>test2</div>}
+                {showPortal ?
+                    <div>test1</div>
+                    :
+                    <div>test2</div>}
                 {/*----------------------------------------------------------------Regular Footer ----------------------------------------------*/}
                 <Grid container>
                     <Grid item xs={4} sx={{...centerVertHoriz}}>
@@ -23,9 +37,9 @@ function Footer() {
                         >
                             <Typography variant={'h5'} onClick={() => {
                                 passSequence === .599 ?
-                                    setShowPortal(true)
-                            :
-                                setPassSequence(0)
+                                    resetPassSequence()
+                                    :
+                                    setPassSequence(0)
                             }}>Navigation</Typography>
                             {navOptions.map((option, index) => (
                                 <Typography key={index} variant={'subtitle1'} component="div">
