@@ -42,9 +42,6 @@ function Footer() {
                         </Grid>
                         <Grid item xs={6} sx={{...centerVertHoriz}}>
                             <Button
-                                onClick={() => {
-                                    redirect('www.test.com')
-                                }}
                                 sx={{
                                     color: textContrastColor,
                                     backgroundColor: secondaryColor,
@@ -56,7 +53,6 @@ function Footer() {
                                 <Link href={`/portal`} sx={{textDecoration: 'none'}}>
                                     <Typography>Go to Portal</Typography>
                                 </Link>
-
                             </Button>
                         </Grid>
                     </Grid>
