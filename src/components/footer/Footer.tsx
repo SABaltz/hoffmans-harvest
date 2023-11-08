@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {
-    navOptions, primaryColor,
+    navOptions,
     secondaryColor,
     socialMediaLinks,
     textColor,
@@ -9,7 +9,6 @@ import {
 import {AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography} from '@mui/material';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {SocialIcon} from "react-social-icons";
-import {ArrowBack, ArrowForward} from "@mui/icons-material";
 import {redirect} from "react-router";
 
 function Footer() {

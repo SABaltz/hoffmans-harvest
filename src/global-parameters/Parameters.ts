@@ -29,4 +29,13 @@ const socialMediaLinks = [
     },
 ];
 
-export {websiteName, navOptions, primaryColor, secondaryColor, textColor, hoverColor, textContrastColor, socialMediaLinks}
+export {
+    websiteName,
+    navOptions,
+    primaryColor,
+    secondaryColor,
+    textColor,
+    hoverColor,
+    textContrastColor,
+    socialMediaLinks
+}
