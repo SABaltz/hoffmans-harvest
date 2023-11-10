@@ -4,14 +4,14 @@ import Typography from '@mui/material/Typography';
 import {secondaryColor, socialMediaLinks, textContrastColor} from '../../global-parameters/Parameters';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {SocialIcon} from 'react-social-icons';
-import terrariumWallpaper from '../../static/terranium-wallpaper.webp';
+import plantWall from "../../static/plant-work-background.webp";
 
 function HomePage() {
     return (
         <>
             <Box
                 sx={{
-                    backgroundImage: `url(${terrariumWallpaper})`,
+                    backgroundImage: `url(${plantWall})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
@@ -23,8 +23,13 @@ function HomePage() {
                     variant="h3"
                     color={textContrastColor}
                     sx={{
-                        textAlign: 'center',
-                        paddingTop: '15rem',
+                        position: "absolute",
+                        top: "40%",
+                        width: "100%",
+                        textAlign: "center",
+                        color: textContrastColor,
+                        backgroundColor: secondaryColor,
+                        boxSizing: 'border-box'
                     }}
                 >
                     Alaska's Premier Exotic Plant Nursery
