@@ -3,7 +3,7 @@ import modelHiking from "../../static/male-model-hiking.jpg";
 import modelBackflip from "../../static/backflip.jpg";
 import {Box, Grid, Stack, Typography} from "@mui/material";
 import {centerVertHoriz} from "../../global-parameters/Styles";
-import {secondaryColor, tertiaryColor, textContrastColor} from "../../global-parameters/Parameters";
+import {secondaryColor, textContrastColor} from "../../global-parameters/Parameters";
 function About() {
     return (
         // <Box  sx={{backgroundImage: 'linear-gradient(to right bottom, #a8ff78, #78ffd6)'}}>
