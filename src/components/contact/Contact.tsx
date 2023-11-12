@@ -35,7 +35,9 @@ function Contact() {
 
                                     <Typography sx={{display: 'flex', alignItems: 'center'}} variant="body2"
                                                 color={textContrastColor}>
-                                        <PhoneIcon href={'tel:+18004444444 '}
+                                        <PhoneIcon href={'tel:+18004444444'} onClick={() => {
+                                            window.open("tel:+18004444444");
+                                        }}
                                                    sx={{paddingRight: '.5rem', cursor: 'pointer'}}/> (907) 999-9999
                                     </Typography>
                                 </CardContent>
