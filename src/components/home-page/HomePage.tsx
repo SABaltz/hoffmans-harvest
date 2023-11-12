@@ -4,19 +4,19 @@ import Typography from '@mui/material/Typography';
 import {secondaryColor, socialMediaLinks, textContrastColor} from '../../global-parameters/Parameters';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {SocialIcon} from 'react-social-icons';
-import plantWall from "../../static/plant-work-background.webp";
+import terraniumWall from "../../static/terranium-wallpaper.webp";
 
 function HomePage() {
     return (
         <>
             <Box
                 sx={{
-                    backgroundImage: `url(${plantWall})`,
+                    backgroundImage: `url(${terraniumWall})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     width: '100vw',
-                    height: '100vh',
+                    height: '90vh',
                 }}
             >
                 <Typography

@@ -1,16 +1,16 @@
-import terranimWall from "../../static/terranium-wallpaper.webp";
+import plantWall from "../../static/plant-work-background.webp";
 import {Box} from "@mui/material";
 
 function Work() {
     return (
         <Box
             sx={{
-                backgroundImage: `url(${terranimWall})`,
+                backgroundImage: `url(${plantWall})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 width: '100vw',
-                height: '100vh',
+                height: '50vh',
             }}
         ></Box>
     )
