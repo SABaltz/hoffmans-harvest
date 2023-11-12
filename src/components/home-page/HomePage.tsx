@@ -29,7 +29,7 @@ function HomePage() {
                         textAlign: "center",
                         color: textContrastColor,
                         backgroundColor: secondaryColor,
-                        boxSizing: 'border-box'
+                        boxSizing: 'border-box',
                     }}
                 >
                     Alaska's Premier Exotic Plant Nursery
