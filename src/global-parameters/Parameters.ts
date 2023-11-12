@@ -5,6 +5,7 @@ const primaryColor = '#041f02'
 
 const secondaryColor = '#88e17c'
 
+const tertiaryColor = '#bfc432'
 const hoverColor = '#2a7310'
 
 const textColor = '#dcdcdc'
@@ -37,5 +38,6 @@ export {
     textColor,
     hoverColor,
     textContrastColor,
-    socialMediaLinks
+    socialMediaLinks,
+    tertiaryColor
 }

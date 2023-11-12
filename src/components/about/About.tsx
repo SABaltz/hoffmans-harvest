@@ -3,14 +3,14 @@ import modelHiking from "../../static/male-model-hiking.jpg";
 import modelBackflip from "../../static/backflip.jpg";
 import {Box, Grid, Stack, Typography} from "@mui/material";
 import {centerVertHoriz} from "../../global-parameters/Styles";
-import {textContrastColor} from "../../global-parameters/Parameters";
-
+import {secondaryColor, tertiaryColor, textContrastColor} from "../../global-parameters/Parameters";
 function About() {
     return (
-        <>
+        // <Box  sx={{backgroundImage: 'linear-gradient(to right bottom, #a8ff78, #78ffd6)'}}>
+        <Box  sx={{backgroundColor: secondaryColor}}>
             {/*About----------------------------------------------------------------------------------------*/}
             <Box>
-                <Grid container sx={{marginTop: '5rem', marginBottom: '5rem'}}>
+                <Grid container sx={{paddingTop: '5rem', paddingBottom: '5rem'}}>
                     <Grid item xs={6} sx={{...centerVertHoriz}}>
                         <Box
                             sx={{
@@ -27,9 +27,9 @@ function About() {
                     <Grid item xs={6} sx={{...centerVertHoriz}}>
                         <Stack>
                             <Typography color={textContrastColor}
-                                        sx={{...centerVertHoriz, marginRight: '8rem', marginBottom: '1rem'}}
+                                        sx={{...centerVertHoriz, paddingRight: '8rem', paddingBottom: '1rem'}}
                                         variant={'h4'}>Austin's Purpose</Typography>
-                            <Typography color={textContrastColor} sx={{marginRight: '8rem', whiteSpace: 'pre-line'}}>
+                            <Typography color={textContrastColor} sx={{paddingRight: '8rem', whiteSpace: 'pre-line'}}>
                                 {"A European designer based in New York City specializing in architecture and interior design consciously considering sustainable living. \n" +
                                     "I believe art is within all of us. The way we express our creativity shall have no boundaries because when it's fueled by our true passions and beliefs it will lead to great results.\n" +
                                     "\n" +
@@ -45,7 +45,7 @@ function About() {
             {/*LifeStyle----------------------------------------------------------------------------------------*/}
 
             <Box>
-                <Grid container sx={{marginTop: '5rem', marginBottom: '5rem'}}>
+                <Grid container sx={{paddingTop: '5rem', paddingBottom: '5rem' }}>
                     <Grid item xs={12} sx={{...centerVertHoriz}}>
                         <Stack sx={{...centerVertHoriz}}>
                             <Typography color={textContrastColor}
@@ -91,7 +91,7 @@ function About() {
 
                 </Grid>
             </Box>
-        </>
+        </Box>
     )
 }
 
