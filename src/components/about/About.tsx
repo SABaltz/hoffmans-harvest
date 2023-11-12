@@ -56,7 +56,7 @@ function About() {
                                 living in the western consumer society. My journey to zero waste is captured in my Blog
                                 and Instagram posts, where I share tips and spread enthusiasm amongst my friends and
                                 followers that are engaged with the same idea. My goal is to connect with many
-                                likeminded individuals that believe having a clean planet is dictated by our own actions
+                                like-minded individuals that believe having a clean planet is dictated by our own actions
                                 rather than waiting around for organizations to make a change. We are the change.
                             </Typography>
                         </Stack>
