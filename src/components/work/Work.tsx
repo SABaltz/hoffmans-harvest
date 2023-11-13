@@ -95,7 +95,7 @@ function Work() {
                         </CardContent>
                     </Card>
                 </Box>
-                {/*--------------------------------------Aquariums----------------------------------------------------*/}
+                {/*--------------------------------------Aquascapes----------------------------------------------------*/}
                 <Box sx={{paddingTop: '3rem'}}>
                     <Card sx={{width: '60rem', backgroundColor: secondaryColor}}>
                         <CardContent>
@@ -105,7 +105,7 @@ function Work() {
                                         <Typography sx={{...centerVertHoriz, paddingBottom: '1.5rem'}}
                                                     color={textContrastColor} variant="h5"
                                                     component="div">
-                                            Terrariums
+                                            Aquascapes
                                         </Typography>
                                         <Typography sx={{...centerVertHoriz}} color={textContrastColor}
                                                     variant="subtitle1"

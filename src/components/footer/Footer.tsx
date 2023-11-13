@@ -6,15 +6,17 @@ import {
     textColor,
     textContrastColor
 } from '../../global-parameters/Parameters';
-import {AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography} from '@mui/material';
+import {AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography, useMediaQuery} from '@mui/material';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {SocialIcon} from "react-social-icons";
+import {plantTheme} from "../../global-parameters/Theme";
 
 function Footer() {
     const currentYear = new Date().getFullYear();
     const [passSequence, setPassSequence] = useState(0)
     const [showPortal, setShowPortal] = useState(false)
     const currentPage = window.location.href.toString().split('/')[3].toUpperCase();
+    const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
 
     function resetPassSequence() {
 
@@ -70,7 +72,9 @@ function Footer() {
                                         resetPassSequence()
                                         :
                                         setPassSequence(0)
-                                }}>Navigation</Typography>
+                                }}>
+                                    {smallScreen? '' : 'Navigation'}
+                                </Typography>
                                 {navOptions.map((option, index) => (
                                     <Link href={option}>
                                         <Typography key={index} variant={'subtitle1'} component="div"
@@ -97,7 +101,7 @@ function Footer() {
                                 <Typography onClick={() => {
                                     setPassSequence(passSequence + .004)
                                 }} variant={'h5'} sx={centerVertHoriz}>
-                                    Follow Me
+                                    {smallScreen? '' : 'Follow Me'}
                                 </Typography>
                                 {socialMediaLinks.map((link, index) => (
                                     <Box sx={{...centerVertHoriz, marginBottom: '.5rem'}} key={index}>
