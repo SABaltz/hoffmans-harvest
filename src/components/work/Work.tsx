@@ -1,11 +1,15 @@
 import plantWall from "../../static/plant-work-background.webp";
 import terrarium from "../../static/terrarium.jpg";
-import {Box, Card, CardContent, Grid, Stack, Typography} from "@mui/material";
+import {Box, Card, CardContent, Grid, Stack, Typography, useMediaQuery} from "@mui/material";
 import {centerVertHoriz} from "../../global-parameters/Styles";
 import React from "react";
 import {secondaryColor, textContrastColor} from "../../global-parameters/Parameters";
+import {plantTheme} from "../../global-parameters/Theme";
 
 function Work() {
+
+    const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
+
     return (
         <Box
             sx={{
@@ -22,7 +26,7 @@ function Work() {
             <Stack>
                 {/*--------------------------------------Terrariums----------------------------------------------------*/}
                 <Box>
-                    <Card sx={{width: '60rem', backgroundColor: secondaryColor}}>
+                    <Card sx={{width: '90vw', backgroundColor: secondaryColor}}>
                         <CardContent>
                             <Grid container>
                                 <Grid item xs={6} sx={{...centerVertHoriz}}>
@@ -48,7 +52,7 @@ function Work() {
                                         backgroundRepeat: 'no-repeat',
                                         backgroundPosition: 'center',
                                         backgroundSize: 'cover',
-                                        width: '20vw',
+                                        width: smallScreen ? '40vw' : '20vw',
                                         height: '40vh',
                                     }}/>
                                 </Grid>
@@ -60,7 +64,7 @@ function Work() {
 
                 {/*--------------------------------------Vivariums----------------------------------------------------*/}
                 <Box sx={{paddingTop: '3rem'}}>
-                    <Card sx={{width: '60rem', backgroundColor: secondaryColor}}>
+                    <Card sx={{width: '90vw', backgroundColor: secondaryColor}}>
                         <CardContent>
                             <Grid container>
                                 <Grid item xs={6} sx={{...centerVertHoriz}}>
@@ -70,7 +74,7 @@ function Work() {
                                         backgroundRepeat: 'no-repeat',
                                         backgroundPosition: 'center',
                                         backgroundSize: 'cover',
-                                        width: '20vw',
+                                        width: smallScreen ? '40vw' : '20vw',
                                         height: '40vh',
                                     }}/>
                                 </Grid>
@@ -97,7 +101,7 @@ function Work() {
                 </Box>
                 {/*--------------------------------------Aquascapes----------------------------------------------------*/}
                 <Box sx={{paddingTop: '3rem'}}>
-                    <Card sx={{width: '60rem', backgroundColor: secondaryColor}}>
+                    <Card sx={{width: '90vw', backgroundColor: secondaryColor}}>
                         <CardContent>
                             <Grid container>
                                 <Grid item xs={6} sx={{...centerVertHoriz}}>
@@ -123,7 +127,7 @@ function Work() {
                                         backgroundRepeat: 'no-repeat',
                                         backgroundPosition: 'center',
                                         backgroundSize: 'cover',
-                                        width: '20vw',
+                                        width: smallScreen ? '40vw' : '20vw',
                                         height: '40vh',
                                     }}/>
                                 </Grid>
