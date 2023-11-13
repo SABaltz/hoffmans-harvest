@@ -1,5 +1,9 @@
 import plantWall from "../../static/plant-work-background.webp";
-import {Box} from "@mui/material";
+import terrarium from "../../static/terrarium.jpg";
+import {Box, Card, CardContent, Grid, Stack, Typography} from "@mui/material";
+import {centerVertHoriz} from "../../global-parameters/Styles";
+import React from "react";
+import {secondaryColor, textContrastColor} from "../../global-parameters/Parameters";
 
 function Work() {
     return (
@@ -10,9 +14,127 @@ function Work() {
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 width: '100vw',
-                height: '50vh',
-            }}
-        ></Box>
+                height: '160vh',
+                display: 'flex',
+                justifyContent: 'center',
+                paddingTop: '4rem'
+            }}>
+            <Stack>
+                {/*--------------------------------------Terrariums----------------------------------------------------*/}
+                <Box>
+                    <Card sx={{width: '60rem', backgroundColor: secondaryColor}}>
+                        <CardContent>
+                            <Grid container>
+                                <Grid item xs={6} sx={{...centerVertHoriz}}>
+                                    <Stack sx={{...centerVertHoriz}}>
+                                        <Typography sx={{...centerVertHoriz, paddingBottom: '1.5rem'}}
+                                                    color={textContrastColor} variant="h5"
+                                                    component="div">
+                                            Terrariums
+                                        </Typography>
+                                        <Typography sx={{...centerVertHoriz}} color={textContrastColor}
+                                                    variant="subtitle1"
+                                                    component="div">
+                                            All of our terrariums consist of hand picked exotic plants suited to persist
+                                            in the cold alaskan weather.
+                                        </Typography>
+                                    </Stack>
+                                </Grid>
+
+                                <Grid item xs={6} sx={{...centerVertHoriz}}>
+                                    <Box sx={{
+
+                                        backgroundImage: `url(${terrarium})`,
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundPosition: 'center',
+                                        backgroundSize: 'cover',
+                                        width: '20vw',
+                                        height: '40vh',
+                                    }}/>
+                                </Grid>
+                            </Grid>
+
+                        </CardContent>
+                    </Card>
+                </Box>
+
+                {/*--------------------------------------Vivariums----------------------------------------------------*/}
+                <Box sx={{paddingTop: '3rem'}}>
+                    <Card sx={{width: '60rem', backgroundColor: secondaryColor}}>
+                        <CardContent>
+                            <Grid container>
+                                <Grid item xs={6} sx={{...centerVertHoriz}}>
+                                    <Box sx={{
+
+                                        backgroundImage: `url(${terrarium})`,
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundPosition: 'center',
+                                        backgroundSize: 'cover',
+                                        width: '20vw',
+                                        height: '40vh',
+                                    }}/>
+                                </Grid>
+
+
+                                <Grid item xs={6} sx={{...centerVertHoriz}}>
+                                    <Stack sx={{...centerVertHoriz}}>
+                                        <Typography sx={{...centerVertHoriz, paddingBottom: '1.5rem'}}
+                                                    color={textContrastColor} variant="h5"
+                                                    component="div">
+                                            Vivariums
+                                        </Typography>
+                                        <Typography sx={{...centerVertHoriz}} color={textContrastColor}
+                                                    variant="subtitle1"
+                                                    component="div">
+                                            All of our terrariums consist of hand picked exotic plants suited to persist
+                                            in the cold alaskan weather.
+                                        </Typography>
+                                    </Stack>
+                                </Grid>
+                            </Grid>
+                        </CardContent>
+                    </Card>
+                </Box>
+                {/*--------------------------------------Aquariums----------------------------------------------------*/}
+                <Box sx={{paddingTop: '3rem'}}>
+                    <Card sx={{width: '60rem', backgroundColor: secondaryColor}}>
+                        <CardContent>
+                            <Grid container>
+                                <Grid item xs={6} sx={{...centerVertHoriz}}>
+                                    <Stack sx={{...centerVertHoriz}}>
+                                        <Typography sx={{...centerVertHoriz, paddingBottom: '1.5rem'}}
+                                                    color={textContrastColor} variant="h5"
+                                                    component="div">
+                                            Terrariums
+                                        </Typography>
+                                        <Typography sx={{...centerVertHoriz}} color={textContrastColor}
+                                                    variant="subtitle1"
+                                                    component="div">
+                                            All of our terrariums consist of hand picked exotic plants suited to persist
+                                            in the cold alaskan weather.
+                                        </Typography>
+                                    </Stack>
+                                </Grid>
+
+                                <Grid item xs={6} sx={{...centerVertHoriz}}>
+                                    <Box sx={{
+
+                                        backgroundImage: `url(${terrarium})`,
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundPosition: 'center',
+                                        backgroundSize: 'cover',
+                                        width: '20vw',
+                                        height: '40vh',
+                                    }}/>
+                                </Grid>
+                            </Grid>
+
+                        </CardContent>
+                    </Card>
+                </Box>
+            </Stack>
+
+        </Box>
     )
 }
 
