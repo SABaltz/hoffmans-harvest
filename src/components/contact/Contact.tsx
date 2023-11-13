@@ -5,6 +5,7 @@ import {secondaryColor, textContrastColor} from "../../global-parameters/Paramet
 import {centerVertHoriz} from "../../global-parameters/Styles";
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
+
 function Contact() {
 
     const recipientEmail = 'hoffman@hoffman.com';
@@ -41,7 +42,7 @@ function Contact() {
                                         Call
                                     </Typography>
 
-                                    <Typography sx={{ ...centerVertHoriz}} variant="body2"
+                                    <Typography sx={{...centerVertHoriz}} variant="body2"
                                                 color={textContrastColor}>
                                         <PhoneIcon onClick={() => {
                                             window.open("tel:+18004444444");
@@ -59,7 +60,8 @@ function Contact() {
                                         Email
                                     </Typography>
                                     <Typography sx={{...centerVertHoriz}} variant="body2" color={textContrastColor}>
-                                        <EmailIcon onClick={handleEmailClick} sx={{paddingRight: '.5rem', cursor: 'pointer'}}/>
+                                        <EmailIcon onClick={handleEmailClick}
+                                                   sx={{paddingRight: '.5rem', cursor: 'pointer'}}/>
                                         hoffman@hoffman.com
                                     </Typography>
                                 </CardContent>

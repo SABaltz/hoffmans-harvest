@@ -4,10 +4,11 @@ import modelBackflip from "../../static/backflip.jpg";
 import {Box, Grid, Stack, Typography} from "@mui/material";
 import {centerVertHoriz} from "../../global-parameters/Styles";
 import {secondaryColor, textContrastColor} from "../../global-parameters/Parameters";
+
 function About() {
     return (
         // <Box  sx={{backgroundImage: 'linear-gradient(to right bottom, #a8ff78, #78ffd6)'}}>
-        <Box  sx={{backgroundColor: secondaryColor}}>
+        <Box sx={{backgroundColor: secondaryColor}}>
             {/*About----------------------------------------------------------------------------------------*/}
             <Box>
                 <Grid container sx={{paddingTop: '5rem', paddingBottom: '5rem'}}>
@@ -45,18 +46,22 @@ function About() {
             {/*LifeStyle----------------------------------------------------------------------------------------*/}
 
             <Box>
-                <Grid container sx={{paddingTop: '5rem', paddingBottom: '5rem' }}>
+                <Grid container sx={{paddingTop: '5rem', paddingBottom: '5rem'}}>
                     <Grid item xs={12} sx={{...centerVertHoriz}}>
                         <Stack sx={{...centerVertHoriz}}>
                             <Typography color={textContrastColor}
                                         sx={{...centerVertHoriz}}
                                         variant={'h4'}>Lifestyle</Typography>
-                            <Typography color={textContrastColor} sx={{whiteSpace: 'pre-line', ...centerVertHoriz, margin:'1rem 5rem 2rem 5rem'}}>
+                            <Typography color={textContrastColor} sx={{
+                                whiteSpace: 'pre-line', ...centerVertHoriz,
+                                margin: '1rem 5rem 2rem 5rem'
+                            }}>
                                 Away from design I dedicated my free time to explore the beauty and challenges of green
                                 living in the western consumer society. My journey to zero waste is captured in my Blog
                                 and Instagram posts, where I share tips and spread enthusiasm amongst my friends and
                                 followers that are engaged with the same idea. My goal is to connect with many
-                                like-minded individuals that believe having a clean planet is dictated by our own actions
+                                like-minded individuals that believe having a clean planet is dictated by our own
+                                actions
                                 rather than waiting around for organizations to make a change. We are the change.
                             </Typography>
                         </Stack>

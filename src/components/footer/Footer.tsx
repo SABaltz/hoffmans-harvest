@@ -73,7 +73,7 @@ function Footer() {
                                         :
                                         setPassSequence(0)
                                 }}>
-                                    {smallScreen? '' : 'Navigation'}
+                                    {smallScreen ? '' : 'Navigation'}
                                 </Typography>
                                 {navOptions.map((option, index) => (
                                     <Link href={option}>
@@ -101,7 +101,7 @@ function Footer() {
                                 <Typography onClick={() => {
                                     setPassSequence(passSequence + .004)
                                 }} variant={'h5'} sx={centerVertHoriz}>
-                                    {smallScreen? '' : 'Follow Me'}
+                                    {smallScreen ? '' : 'Follow Me'}
                                 </Typography>
                                 {socialMediaLinks.map((link, index) => (
                                     <Box sx={{...centerVertHoriz, marginBottom: '.5rem'}} key={index}>
