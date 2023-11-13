@@ -1,13 +1,14 @@
 import React from 'react'
 import plantPhone from "../../static/plant-phone.jpg";
-import {Box, Card, CardContent, Grid, Typography} from "@mui/material";
+import {Box, Card, CardContent, Grid, Typography, useMediaQuery} from "@mui/material";
 import {secondaryColor, textContrastColor} from "../../global-parameters/Parameters";
 import {centerVertHoriz} from "../../global-parameters/Styles";
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
+import {plantTheme} from "../../global-parameters/Theme";
 
 function Contact() {
-
+    const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const recipientEmail = 'hoffman@hoffman.com';
     const subject = '';
     const body = '';
@@ -30,12 +31,12 @@ function Contact() {
             >
                 <Box sx={{
                     position: "absolute",
-                    top: "40%",
+                    top: smallScreen ? '30%' : "40%",
                     width: "100%",
                 }}>
                     <Grid container sx={{...centerVertHoriz}}>
-                        <Grid item xs={6} sx={{...centerVertHoriz}}>
-                            <Card sx={{width: '20rem', backgroundColor: secondaryColor}}>
+                        <Grid item xs={12} md={6} sx={{...centerVertHoriz}}>
+                            <Card sx={{width: '20rem', backgroundColor: secondaryColor, marginBottom: '3rem'}}>
                                 <CardContent>
                                     <Typography sx={{...centerVertHoriz}} color={textContrastColor} variant="h5"
                                                 component="div">
@@ -52,7 +53,7 @@ function Contact() {
                                 </CardContent>
                             </Card>
                         </Grid>
-                        <Grid item xs={6} sx={{...centerVertHoriz}}>
+                        <Grid item xs={12} md={6} sx={{...centerVertHoriz}}>
                             <Card sx={{width: '20rem', backgroundColor: secondaryColor}}>
                                 <CardContent>
                                     <Typography sx={{...centerVertHoriz}} color={textContrastColor} variant="h5"
