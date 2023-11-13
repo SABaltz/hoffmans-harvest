@@ -2,18 +2,25 @@ import React, {useState} from 'react';
 import {AppBar, Box, Button, Grid, Link, Menu, MenuItem, Toolbar, Typography, useMediaQuery,} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {plantTheme} from '../../global-parameters/Theme';
-import {navOptions, primaryColor, secondaryColor, textColor, websiteName,} from '../../global-parameters/Parameters';
+import {
+    navOptions,
+    secondaryColor,
+    textColor,
+    textContrastColor,
+    websiteName,
+} from '../../global-parameters/Parameters';
 
 function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const currentPage = window.location.href.toString().split('/')[3].toUpperCase();
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-
-    const handleMenuClick = (event: any) => {
+    const handleClick = (event: any) => {
         setAnchorEl(event.currentTarget);
+    }
+    const handleClose = () => {
+        setAnchorEl(null);
     };
-
     const handleMenuClose = () => {
         setAnchorEl(null);
     };
@@ -26,11 +33,11 @@ function NavBar() {
                     <Grid container>
                         <Grid item xs={4}>
                             <Button
-                                id="basic-button"
-                                aria-controls={open ? 'basic-menu' : undefined}
+                                id="demo-positioned-button"
+                                aria-controls={open ? 'demo-positioned-menu' : undefined}
                                 aria-haspopup="true"
                                 aria-expanded={open ? 'true' : undefined}
-                                onClick={anchorEl === null ? handleMenuClick : handleMenuClose}
+                                onClick={handleClick}
                             >
                                 <MenuIcon
                                     fontSize="small"
@@ -39,47 +46,54 @@ function NavBar() {
                                         fontSize: '3rem',
                                     }}
                                 />
-                                <Menu
-                                    id="basic-menu"
-                                    anchorEl={anchorEl}
-                                    open={open}
-                                    onClose={() => handleMenuClose()}
-                                    MenuListProps={{
-                                        'aria-labelledby': 'basic-button',
-                                    }}
-                                >
-                                    {navOptions.map((option, index) => (
-                                        <MenuItem
-                                            sx={{
-                                                backgroundColor: secondaryColor,
-                                                '&:active': {
-                                                    backgroundColor: primaryColor,
-                                                }
-                                            }}
-                                            key={index}
-                                            onClick={handleMenuClose}
-                                        >
-                                            <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
-                                                <Typography
-                                                    variant="h6"
-                                                    component="div"
-                                                    sx={{
-                                                        flexGrow: 1,
-                                                        textDecoration:
-                                                            currentPage === option.toUpperCase()
-                                                                ? 'underline'
-                                                                : currentPage === '' && option === 'home'
-                                                                    ? 'underline'
-                                                                    : '',
-                                                    }}
-                                                >
-                                                    {option.toUpperCase()}
-                                                </Typography>
-                                            </Link>
-                                        </MenuItem>
-                                    ))}
-                                </Menu>
                             </Button>
+                            <Menu
+                                id="demo-positioned-menu"
+                                aria-labelledby="demo-positioned-button"
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                }}
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'left',
+                                }}
+                            >
+                                {navOptions.map((option, index) => (
+                                    <MenuItem
+                                        sx={{
+                                            backgroundColor: secondaryColor,
+                                            '&:active': {
+                                                backgroundColor: 'grey',
+                                            }
+                                        }}
+                                        key={index}
+                                        onClick={handleMenuClose}
+                                    >
+                                        <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
+                                            <Typography
+                                                color={textContrastColor}
+                                                variant="h6"
+                                                component="div"
+                                                sx={{
+                                                    flexGrow: 1,
+                                                    textDecoration:
+                                                        currentPage === option.toUpperCase()
+                                                            ? 'underline'
+                                                            : currentPage === '' && option === 'home'
+                                                                ? 'underline'
+                                                                : '',
+                                                }}
+                                            >
+                                                {option.toUpperCase()}
+                                            </Typography>
+                                        </Link>
+                                    </MenuItem>
+                                ))}
+                            </Menu>
                         </Grid>
                         <Grid item xs={8}>
                             <Typography sx={{marginTop: '.8rem'}} variant="h5">
