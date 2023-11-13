@@ -25,7 +25,6 @@ function Contact() {
                     backgroundSize: 'cover',
                     width: '100vw',
                     height: '100vh',
-                    opacity: '80%'
                 }}
             >
                 <Box sx={{
@@ -35,14 +34,14 @@ function Contact() {
                 }}>
                     <Grid container sx={{...centerVertHoriz}}>
                         <Grid item xs={6} sx={{...centerVertHoriz}}>
-                            <Card sx={{maxWidth: '20rem', backgroundColor: secondaryColor}}>
+                            <Card sx={{width: '20rem', backgroundColor: secondaryColor}}>
                                 <CardContent>
                                     <Typography sx={{...centerVertHoriz}} color={textContrastColor} variant="h5"
                                                 component="div">
-                                        Call Us
+                                        Call
                                     </Typography>
 
-                                    <Typography sx={{display: 'flex', alignItems: 'center'}} variant="body2"
+                                    <Typography sx={{ ...centerVertHoriz}} variant="body2"
                                                 color={textContrastColor}>
                                         <PhoneIcon onClick={() => {
                                             window.open("tel:+18004444444");
@@ -53,13 +52,13 @@ function Contact() {
                             </Card>
                         </Grid>
                         <Grid item xs={6} sx={{...centerVertHoriz}}>
-                            <Card sx={{maxWidth: '20rem', backgroundColor: secondaryColor}}>
+                            <Card sx={{width: '20rem', backgroundColor: secondaryColor}}>
                                 <CardContent>
                                     <Typography sx={{...centerVertHoriz}} color={textContrastColor} variant="h5"
                                                 component="div">
-                                        Email Us
+                                        Email
                                     </Typography>
-                                    <Typography sx={{display: 'flex', alignItems: 'center'}} variant="body2" color={textContrastColor}>
+                                    <Typography sx={{...centerVertHoriz}} variant="body2" color={textContrastColor}>
                                         <EmailIcon onClick={handleEmailClick} sx={{paddingRight: '.5rem', cursor: 'pointer'}}/>
                                         hoffman@hoffman.com
                                     </Typography>
