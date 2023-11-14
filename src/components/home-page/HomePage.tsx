@@ -52,7 +52,7 @@ const HomePage: React.FC = () => {
                             Social Media
                         </Typography>
                     </Grid>
-                    <Grid container xs={12} sx={{...centerVertHoriz}}>
+                    <Grid item xs={12} sx={{...centerVertHoriz}}>
                         {socialMediaLinks.map((link, index) => (
                             <Grid key={index} item xs={2} sx={centerVertHoriz}>
                                 <SocialIcon url={link.url} href={link.href}/>

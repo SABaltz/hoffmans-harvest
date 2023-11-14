@@ -7,18 +7,18 @@ import {colorPalette, navOptions, websiteName,} from '../../global-parameters/Pa
 function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const currentPage = window.location.href.toString().split('/')[3].toUpperCase();
-    const [anchorEl, setAnchorEl] = useState<HTMLElement | any | null>(null);
+    const [anchorEl, setAnchorEl] = useState<HTMLElement | undefined>(undefined);
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
 
     const handleClose = () => {
-        setAnchorEl(null);
+        setAnchorEl(undefined);
     };
 
     const handleMenuClose = () => {
-        setAnchorEl(null);
+        setAnchorEl(undefined);
     };
 
     return (
@@ -40,7 +40,7 @@ function NavBar() {
                             id="demo-positioned-menu"
                             aria-labelledby="demo-positioned-button"
                             anchorEl={anchorEl}
-                            open={anchorEl}
+                            open={Boolean(anchorEl)}
                             onClose={handleClose}
                             anchorOrigin={{vertical: 'bottom', horizontal: 'left'}}
                             transformOrigin={{vertical: 'top', horizontal: 'left'}}

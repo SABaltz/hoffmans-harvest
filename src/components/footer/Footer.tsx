@@ -4,6 +4,7 @@ import {AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography, useMediaQue
 import {SocialIcon} from 'react-social-icons';
 import {plantTheme} from '../../global-parameters/Theme';
 import {centerVertHoriz} from "../../global-parameters/Styles";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 interface FooterProps {
 }
@@ -45,7 +46,9 @@ const Footer: React.FC<FooterProps> = () => {
                                     }}
                                 >
                                     <Link href={`/portal`} sx={{textDecoration: 'none'}}>
-                                        <Typography>Go to Portal</Typography>
+                                        <Typography sx={{display: 'flex', alignItems: 'center'}}>Go to Portal
+                                            <ArrowForwardIcon/>
+                                        </Typography>
                                     </Link>
                                 </Button>
                             </Grid>
@@ -55,7 +58,7 @@ const Footer: React.FC<FooterProps> = () => {
                         <>
                             <Grid item xs={4} sx={centerVertHoriz}>
                                 <Stack flexGrow={1} sx={centerVertHoriz}>
-                                    <Typography variant="h5" onClick={resetPassSequence}>
+                                    <Typography color={colorPalette.text} variant="h5" onClick={resetPassSequence}>
                                         {smallScreen ? '' : 'Navigation'}
                                     </Typography>
                                     {navOptions.map((option, index) => (
@@ -84,7 +87,8 @@ const Footer: React.FC<FooterProps> = () => {
                             </Grid>
                             <Grid item xs={4} sx={centerVertHoriz}>
                                 <Stack>
-                                    <Typography variant="h5" onClick={() => setPassSequence(passSequence + 0.004)}>
+                                    <Typography color={colorPalette.text} variant="h5"
+                                                onClick={() => setPassSequence(passSequence + 0.004)}>
                                         {smallScreen ? '' : 'Follow Me'}
                                     </Typography>
                                     {socialMediaLinks.map((link, index) => (
