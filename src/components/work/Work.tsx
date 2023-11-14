@@ -18,7 +18,7 @@ function Work() {
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 width: '100vw',
-                height: '160vh',
+                height: '200vh',
                 display: 'flex',
                 justifyContent: 'center',
                 paddingTop: '4rem'
