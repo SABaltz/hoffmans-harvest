@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Grid} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import {SocialIcon} from 'react-social-icons';
-import terraniumWall from "../../static/terranium-wallpaper.webp";
+import terrariumWall from "../../static/terranium-wallpaper.webp";
 import {colorPalette, socialMediaLinks} from '../../global-parameters/Parameters';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 
@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
         <>
             <Box
                 sx={{
-                    backgroundImage: `url(${terraniumWall})`,
+                    backgroundImage: `url(${terrariumWall})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
