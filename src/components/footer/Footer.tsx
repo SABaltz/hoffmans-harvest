@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
-import {
-    navOptions,
-    secondaryColor,
-    socialMediaLinks,
-    textColor,
-    textContrastColor,
-} from '../../global-parameters/Parameters';
-import { AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography, useMediaQuery } from '@mui/material';
-import { SocialIcon } from 'react-social-icons';
-import { plantTheme } from '../../global-parameters/Theme';
+import React, {useState} from 'react';
+import {colorPalette, navOptions, socialMediaLinks} from '../../global-parameters/Parameters';
+import {AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography, useMediaQuery} from '@mui/material';
+import {SocialIcon} from 'react-social-icons';
+import {plantTheme} from '../../global-parameters/Theme';
 import {centerVertHoriz} from "../../global-parameters/Styles";
 
-interface FooterProps {}
+interface FooterProps {
+}
 
 const Footer: React.FC<FooterProps> = () => {
     const currentYear = new Date().getFullYear();
@@ -41,15 +36,15 @@ const Footer: React.FC<FooterProps> = () => {
                             <Grid item xs={6} sx={centerVertHoriz}>
                                 <Button
                                     sx={{
-                                        color: textContrastColor,
-                                        backgroundColor: secondaryColor,
+                                        color: colorPalette.textContrast,
+                                        backgroundColor: colorPalette.secondary,
                                         display: 'block',
                                         '&:hover': {
-                                            backgroundColor: secondaryColor,
+                                            backgroundColor: colorPalette.secondary,
                                         },
                                     }}
                                 >
-                                    <Link href={`/portal`} sx={{ textDecoration: 'none' }}>
+                                    <Link href={`/portal`} sx={{textDecoration: 'none'}}>
                                         <Typography>Go to Portal</Typography>
                                     </Link>
                                 </Button>
@@ -69,15 +64,15 @@ const Footer: React.FC<FooterProps> = () => {
                                                 variant="subtitle1"
                                                 component="div"
                                                 sx={{
-                                                    color: currentPage === option.toUpperCase() ? secondaryColor : textColor,
+                                                    color: currentPage === option.toUpperCase() ? colorPalette.secondary : colorPalette.text,
                                                     borderBottom:
                                                         currentPage === option.toUpperCase()
-                                                            ? `.1rem solid ${secondaryColor}`
+                                                            ? `.1rem solid ${colorPalette.secondary}`
                                                             : currentPage === '' && option === 'home'
-                                                                ? `.1rem solid ${textColor}`
+                                                                ? `.1rem solid ${colorPalette.text}`
                                                                 : '',
                                                     '&:hover': {
-                                                        color: secondaryColor,
+                                                        color: colorPalette.secondary,
                                                     },
                                                 }}
                                             >
@@ -93,18 +88,21 @@ const Footer: React.FC<FooterProps> = () => {
                                         {smallScreen ? '' : 'Follow Me'}
                                     </Typography>
                                     {socialMediaLinks.map((link, index) => (
-                                        <Box sx={{ ...centerVertHoriz, marginBottom: '.5rem' }} key={index}>
-                                            <SocialIcon style={{ width: '2rem', height: '2rem' }} url={link.url} href={link.href} />
+                                        <Box sx={{...centerVertHoriz, marginBottom: '.5rem'}} key={index}>
+                                            <SocialIcon style={{width: '2rem', height: '2rem'}} url={link.url}
+                                                        href={link.href}/>
                                         </Box>
                                     ))}
                                 </Stack>
                             </Grid>
                             <Grid item xs={4} sx={centerVertHoriz}>
                                 <Stack>
-                                    <Typography sx={centerVertHoriz} onClick={() => setPassSequence(passSequence + 0.125)}>
+                                    <Typography sx={centerVertHoriz}
+                                                onClick={() => setPassSequence(passSequence + 0.125)}>
                                         &copy; Hofffman's Harvest {currentYear}
                                     </Typography>
-                                    <Typography sx={centerVertHoriz} onClick={() => setPassSequence(passSequence + 0.235)}>
+                                    <Typography sx={centerVertHoriz}
+                                                onClick={() => setPassSequence(passSequence + 0.235)}>
                                         All Rights Reserved
                                     </Typography>
                                 </Stack>

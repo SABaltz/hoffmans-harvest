@@ -1,16 +1,14 @@
-const websiteName = 'Hoffman\'s Harvest'
-const navOptions = ['home', 'work', 'about', 'contact']
+const websiteName = "Hoffman's Harvest";
+const navOptions = ['home', 'work', 'about', 'contact'];
 
-const primaryColor = '#041f02'
-
-const secondaryColor = '#88e17c'
-
-const tertiaryColor = '#bfc432'
-const hoverColor = '#2a7310'
-
-const textColor = '#dcdcdc'
-
-const textContrastColor = '#000000'
+const colorPalette = {
+    primary: '#041f02',
+    secondary: '#88e17c',
+    tertiary: '#bfc432',
+    hover: '#2a7310',
+    text: '#dcdcdc',
+    textContrast: '#000000',
+};
 
 const socialMediaLinks = [
     {
@@ -30,14 +28,4 @@ const socialMediaLinks = [
     },
 ];
 
-export {
-    websiteName,
-    navOptions,
-    primaryColor,
-    secondaryColor,
-    textColor,
-    hoverColor,
-    textContrastColor,
-    socialMediaLinks,
-    tertiaryColor
-}
+export {websiteName, navOptions, colorPalette, socialMediaLinks};

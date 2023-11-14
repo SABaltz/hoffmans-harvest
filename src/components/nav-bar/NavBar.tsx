@@ -2,13 +2,7 @@ import React, {useState} from 'react';
 import {AppBar, Box, Button, Grid, Link, Menu, MenuItem, Toolbar, Typography, useMediaQuery,} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {plantTheme} from '../../global-parameters/Theme';
-import {
-    navOptions,
-    secondaryColor,
-    textColor,
-    textContrastColor,
-    websiteName,
-} from '../../global-parameters/Parameters';
+import {colorPalette, navOptions, websiteName,} from '../../global-parameters/Parameters';
 
 function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
@@ -55,7 +49,7 @@ function NavBar() {
                                 <MenuItem
                                     key={index}
                                     sx={{
-                                        backgroundColor: secondaryColor,
+                                        backgroundColor: colorPalette.secondary,
                                         '&:active': {
                                             backgroundColor: 'grey',
                                         },
@@ -64,7 +58,7 @@ function NavBar() {
                                 >
                                     <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
                                         <Typography
-                                            color={textContrastColor}
+                                            color={colorPalette.textContrast}
                                             variant="h6"
                                             component="div"
                                             sx={{
@@ -93,7 +87,7 @@ function NavBar() {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="h4" component="div" sx={{flexGrow: 1}}>
-                            <Link href={"/home"} sx={{color: textColor, textDecoration: 'none'}}>
+                            <Link href={"/home"} sx={{color: colorPalette.text, textDecoration: 'none'}}>
                                 {websiteName}
                             </Link>
                         </Typography>
@@ -103,13 +97,13 @@ function NavBar() {
                                     <Typography
                                         variant="h6"
                                         sx={{
-                                            color: currentPage === option.toUpperCase() ? secondaryColor : textColor,
+                                            color: currentPage === option.toUpperCase() ? colorPalette.secondary : colorPalette.text,
                                             borderBottom:
                                                 currentPage === option.toUpperCase() || (currentPage === '' && option === 'home')
-                                                    ? `.1rem solid ${secondaryColor}`
+                                                    ? `.1rem solid ${colorPalette.secondary}`
                                                     : '',
                                             '&:hover': {
-                                                color: secondaryColor,
+                                                color: colorPalette.secondary,
                                             },
                                         }}
                                     >

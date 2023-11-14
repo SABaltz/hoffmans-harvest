@@ -1,13 +1,14 @@
 import React from 'react';
-import { Box, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
-import { centerVertHoriz } from '../../global-parameters/Styles';
-import { secondaryColor, textContrastColor } from '../../global-parameters/Parameters';
-import { plantTheme } from '../../global-parameters/Theme';
+import {Box, Grid, Stack, Typography, useMediaQuery} from '@mui/material';
+import {centerVertHoriz} from '../../global-parameters/Styles';
+import {colorPalette} from '../../global-parameters/Parameters';
+import {plantTheme} from '../../global-parameters/Theme';
 import modelWatering from '../../static/model-watering-plant.jpg';
 import modelHiking from '../../static/male-model-hiking.jpg';
 import modelBackflip from '../../static/backflip.jpg';
 
-interface AboutProps {}
+interface AboutProps {
+}
 
 const About: React.FC<AboutProps> = () => {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
@@ -23,28 +24,32 @@ const About: React.FC<AboutProps> = () => {
     };
 
     const renderImageBox = (image: string) => (
-        <Box sx={{ ...imageStyle, backgroundImage: `url(${image})` }}></Box>
+        <Box sx={{...imageStyle, backgroundImage: `url(${image})`}}></Box>
     );
 
     return (
-        <Box sx={{ backgroundColor: secondaryColor }}>
+        <Box sx={{backgroundColor: colorPalette.secondary}}>
             {/* About */}
             <Box>
-                <Grid container sx={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
-                    <Grid item xs={12} md={6} sx={{ ...centerVertHoriz }}>
+                <Grid container sx={{paddingTop: '5rem', paddingBottom: '5rem'}}>
+                    <Grid item xs={12} md={6} sx={{...centerVertHoriz}}>
                         {renderImageBox(modelWatering)}
                     </Grid>
-                    <Grid item xs={12} md={6} sx={{ ...centerVertHoriz }}>
+                    <Grid item xs={12} md={6} sx={{...centerVertHoriz}}>
                         <Stack>
                             <Typography
-                                color={textContrastColor}
-                                sx={{ ...centerVertHoriz, paddingRight: smallScreen ? '' : '8rem', paddingBottom: '1rem' }}
+                                color={colorPalette.textContrast}
+                                sx={{
+                                    ...centerVertHoriz,
+                                    paddingRight: smallScreen ? '' : '8rem',
+                                    paddingBottom: '1rem'
+                                }}
                                 variant="h4"
                             >
                                 Austin's Purpose
                             </Typography>
                             <Typography
-                                color={textContrastColor}
+                                color={colorPalette.textContrast}
                                 sx={{
                                     paddingRight: smallScreen ? '1rem' : '8rem',
                                     paddingLeft: smallScreen ? '1rem' : '',
@@ -62,14 +67,14 @@ const About: React.FC<AboutProps> = () => {
 
             {/* Lifestyle */}
             <Box>
-                <Grid container sx={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
-                    <Grid item xs={12} sx={{ ...centerVertHoriz }}>
-                        <Stack sx={{ ...centerVertHoriz }}>
-                            <Typography color={textContrastColor} sx={{ ...centerVertHoriz }} variant="h4">
+                <Grid container sx={{paddingTop: '5rem', paddingBottom: '5rem'}}>
+                    <Grid item xs={12} sx={{...centerVertHoriz}}>
+                        <Stack sx={{...centerVertHoriz}}>
+                            <Typography color={colorPalette.textContrast} sx={{...centerVertHoriz}} variant="h4">
                                 Lifestyle
                             </Typography>
                             <Typography
-                                color={textContrastColor}
+                                color={colorPalette.textContrast}
                                 sx={{
                                     whiteSpace: 'pre-line',
                                     ...centerVertHoriz,
@@ -86,10 +91,10 @@ const About: React.FC<AboutProps> = () => {
                             </Typography>
                         </Stack>
                     </Grid>
-                    <Grid item xs={12} md={6} sx={{ ...centerVertHoriz }}>
+                    <Grid item xs={12} md={6} sx={{...centerVertHoriz}}>
                         {renderImageBox(modelHiking)}
                     </Grid>
-                    <Grid item xs={12} md={6} sx={{ ...centerVertHoriz }}>
+                    <Grid item xs={12} md={6} sx={{...centerVertHoriz}}>
                         {renderImageBox(modelBackflip)}
                     </Grid>
                 </Grid>

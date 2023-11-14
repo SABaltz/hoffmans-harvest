@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Card, CardContent, Grid, Stack, Typography, useMediaQuery} from '@mui/material';
 import {centerVertHoriz} from '../../global-parameters/Styles';
-import {secondaryColor, textContrastColor} from '../../global-parameters/Parameters';
+import {colorPalette} from '../../global-parameters/Parameters';
 import {plantTheme} from '../../global-parameters/Theme';
 import plantWall from '../../static/plant-work-background.webp';
 import terrarium from '../../static/terrarium.jpg';
@@ -18,7 +18,7 @@ function WorkCard({title, description, imageUrl, order}: WorkCardProps) {
 
     return (
         <Box sx={{paddingTop: '3rem'}}>
-            <Card sx={{width: '90vw', backgroundColor: secondaryColor}}>
+            <Card sx={{width: '90vw', backgroundColor: colorPalette.secondary}}>
                 <CardContent>
                     <Grid container>
                         <Grid item xs={6} order={{xs: order[0]}} sx={{...centerVertHoriz}}>
@@ -35,11 +35,13 @@ function WorkCard({title, description, imageUrl, order}: WorkCardProps) {
                         </Grid>
                         <Grid item xs={6} order={{xs: order[1]}} sx={{...centerVertHoriz}}>
                             <Stack sx={{...centerVertHoriz}}>
-                                <Typography sx={{...centerVertHoriz, paddingBottom: '1.5rem'}} color={textContrastColor}
+                                <Typography sx={{...centerVertHoriz, paddingBottom: '1.5rem'}}
+                                            color={colorPalette.textContrast}
                                             variant="h5" component="div">
                                     {title}
                                 </Typography>
-                                <Typography sx={{...centerVertHoriz}} color={textContrastColor} variant="subtitle1"
+                                <Typography sx={{...centerVertHoriz}} color={colorPalette.textContrast}
+                                            variant="subtitle1"
                                             component="div">
                                     {description}
                                 </Typography>
@@ -72,19 +74,19 @@ function Work() {
                     title="Terrariums"
                     description="All of our terrariums consist of handpicked exotic plants suited to persist in the cold Alaskan weather."
                     imageUrl={terrarium}
-                    order={[0,1]}
+                    order={[0, 1]}
                 />
                 <WorkCard
                     title="Vivariums"
                     description="All of our vivariums consist of handpicked exotic plants suited to persist in the cold Alaskan weather."
                     imageUrl={terrarium}
-                    order={[1,0]}
+                    order={[1, 0]}
                 />
                 <WorkCard
                     title="Aquascapes"
                     description="All of our aquascapes consist of handpicked exotic plants suited to persist in the cold Alaskan weather."
                     imageUrl={terrarium}
-                    order={[0,1]}
+                    order={[0, 1]}
                 />
             </Stack>
         </Box>
