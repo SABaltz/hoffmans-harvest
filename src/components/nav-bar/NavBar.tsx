@@ -2,14 +2,13 @@ import React, {useContext, useState} from 'react';
 import {AppBar, Box, Button, Grid, Link, Menu, MenuItem, Toolbar, Typography, useMediaQuery,} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {plantTheme} from '../../global-parameters/Theme';
-import {colorPalette, navOptions, websiteName,} from '../../global-parameters/Parameters';
-import {ThemeContext} from "../../App";
+import {ParameterContext} from "../../App";
 
 function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const currentPage = window.location.href.toString().split('/')[3].toUpperCase();
     const [anchorEl, setAnchorEl] = useState<HTMLElement | undefined>(undefined);
-    const theme = useContext(ThemeContext);
+    const parameters = useContext(ParameterContext);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -46,11 +45,11 @@ function NavBar() {
                             anchorOrigin={{vertical: 'bottom', horizontal: 'left'}}
                             transformOrigin={{vertical: 'top', horizontal: 'left'}}
                         >
-                            {navOptions.map((option, index) => (
+                            {parameters.navOptions.map((option, index) => (
                                 <MenuItem
                                     key={index}
                                     sx={{
-                                        backgroundColor: colorPalette.secondary,
+                                        backgroundColor: parameters.colorPalette.secondary,
                                         '&:active': {
                                             backgroundColor: 'grey',
                                         },
@@ -59,7 +58,7 @@ function NavBar() {
                                 >
                                     <Link href={`/${option}`} sx={{textDecoration: 'none'}}>
                                         <Typography
-                                            color={colorPalette.textContrast}
+                                            color={parameters.colorPalette.textContrast}
                                             variant="h6"
                                             component="div"
                                             sx={{
@@ -79,7 +78,7 @@ function NavBar() {
                     </Grid>
                     <Grid item xs={8}>
                         <Typography sx={{marginTop: '.8rem'}} variant="h5">
-                            {websiteName}
+                            {parameters.websiteName}
                         </Typography>
                     </Grid>
                 </Grid>
@@ -88,23 +87,23 @@ function NavBar() {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="h4" component="div" sx={{flexGrow: 1}}>
-                            <Link href={"/home"} sx={{color: colorPalette.text, textDecoration: 'none'}}>
-                                {websiteName}
+                            <Link href={"/home"} sx={{color: parameters.colorPalette.text, textDecoration: 'none'}}>
+                                {parameters.websiteName}
                             </Link>
                         </Typography>
-                        {navOptions.map((option, index) => (
+                        {parameters.navOptions.map((option, index) => (
                             <Button key={index} color="inherit">
                                 <Link href={`/${option}`}>
                                     <Typography
                                         variant="h6"
                                         sx={{
-                                            color: currentPage === option.toUpperCase() ? colorPalette.secondary : colorPalette.text,
+                                            color: currentPage === option.toUpperCase() ? parameters.colorPalette.secondary : parameters.colorPalette.text,
                                             borderBottom:
                                                 currentPage === option.toUpperCase() || (currentPage === '' && option === 'home')
-                                                    ? `.1rem solid ${colorPalette.secondary}`
+                                                    ? `.1rem solid ${parameters.colorPalette.secondary}`
                                                     : '',
                                             '&:hover': {
-                                                color: colorPalette.secondary,
+                                                color: parameters.colorPalette.secondary,
                                             },
                                         }}
                                     >
@@ -116,11 +115,10 @@ function NavBar() {
                     </Toolbar>
                 </AppBar>
             )}
-            <div>{theme}</div>
         </Box>
 
-)
-    ;
+    )
+        ;
 }
 
 export default NavBar;

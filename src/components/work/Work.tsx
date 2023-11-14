@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Box, Card, CardContent, Grid, Stack, Typography, useMediaQuery} from '@mui/material';
 import {centerVertHoriz} from '../../global-parameters/Styles';
-import {colorPalette} from '../../global-parameters/Parameters';
 import {plantTheme} from '../../global-parameters/Theme';
 import plantWall from '../../static/plant-work-background.webp';
 import terrarium from '../../static/terrarium.jpg';
+import {ParameterContext} from "../../App";
 
 interface WorkCardProps {
     title: string;
@@ -15,10 +15,10 @@ interface WorkCardProps {
 
 function WorkCard({title, description, imageUrl, order}: WorkCardProps) {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
-
+    const parameters = useContext(ParameterContext);
     return (
         <Box sx={{paddingTop: '3rem'}}>
-            <Card sx={{width: '90vw', backgroundColor: colorPalette.secondary}}>
+            <Card sx={{width: '90vw', backgroundColor: parameters.colorPalette.secondary}}>
                 <CardContent>
                     <Grid container>
                         <Grid item xs={6} order={{xs: order[0]}} sx={{...centerVertHoriz}}>
@@ -36,11 +36,11 @@ function WorkCard({title, description, imageUrl, order}: WorkCardProps) {
                         <Grid item xs={6} order={{xs: order[1]}} sx={{...centerVertHoriz}}>
                             <Stack sx={{...centerVertHoriz}}>
                                 <Typography sx={{...centerVertHoriz, paddingBottom: '1.5rem'}}
-                                            color={colorPalette.textContrast}
+                                            color={parameters.colorPalette.textContrast}
                                             variant="h5" component="div">
                                     {title}
                                 </Typography>
-                                <Typography sx={{...centerVertHoriz}} color={colorPalette.textContrast}
+                                <Typography sx={{...centerVertHoriz}} color={parameters.colorPalette.textContrast}
                                             variant="subtitle1"
                                             component="div">
                                     {description}

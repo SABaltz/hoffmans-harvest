@@ -1,23 +1,23 @@
-import React, {createContext, useContext} from 'react';
-import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
+import React, {createContext} from 'react';
 import {ThemeProvider} from '@mui/material';
 import {plantTheme} from './global-parameters/Theme';
 import NavBar from './components/nav-bar/NavBar';
-import Footer from './components/footer/Footer';
-import HomePage from './components/home-page/HomePage';
-import About from './components/about/About';
-import Work from './components/work/Work';
-import Contact from './components/contact/Contact';
+import {globalParams} from "./global-parameters/Parameters";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import HomePage from "./components/home-page/HomePage";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
 import Portal from "./components/portal/Portal";
-import {colorPalette} from "./global-parameters/Parameters";
+import Work from "./components/work/Work";
+import Footer from "./components/footer/Footer";
 
-export const ThemeContext = createContext('light');
+export const ParameterContext = createContext(globalParams);
 
 function App() {
 
     return (
         <ThemeProvider theme={plantTheme}>
-            <ThemeContext.Provider value="dark">
+            <ParameterContext.Provider value={globalParams}>
                 <NavBar/>
                 <BrowserRouter>
                     <Routes>
@@ -30,7 +30,7 @@ function App() {
                     </Routes>
                 </BrowserRouter>
                 <Footer/>
-            </ThemeContext.Provider>
+            </ParameterContext.Provider>
         </ThemeProvider>
     );
 }

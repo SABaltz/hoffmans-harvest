@@ -1,20 +1,22 @@
-import {colorPalette} from "../../global-parameters/Parameters";
 import {Box, Button, Card, CardContent, Link, List, ListItem, TextField, Typography} from "@mui/material";
-import React from "react";
+import React, {useContext} from "react";
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import {centerVertHoriz} from "../../global-parameters/Styles";
+import {ParameterContext} from "../../App";
 
 function Portal() {
+    const parameters = useContext(ParameterContext);
     return (
-        <Box sx={{width: '100vw', height: '100vh', backgroundColor: colorPalette.primary}}>
+
+        <Box sx={{width: '100vw', height: '100vh', backgroundColor: parameters.colorPalette.primary}}>
 
             <Button
                 sx={{
-                    color: colorPalette.textContrast,
-                    backgroundColor: colorPalette.secondary,
+                    color: parameters.colorPalette.textContrast,
+                    backgroundColor: parameters.colorPalette.secondary,
                     display: 'block',
                     '&:hover': {
-                        backgroundColor: colorPalette.secondary,
+                        backgroundColor: parameters.colorPalette.secondary,
                     },
                     marginLeft: '1rem'
                 }}>
@@ -26,7 +28,7 @@ function Portal() {
                 </Link>
             </Button>
             <Box sx={{width: '100vw', ...centerVertHoriz, marginTop: '2rem'}}>
-                <Card sx={{width: '90vw', backgroundColor: colorPalette.secondary, ...centerVertHoriz}}>
+                <Card sx={{width: '90vw', backgroundColor: parameters.colorPalette.secondary, ...centerVertHoriz}}>
                     <CardContent>
                         <List>
                             <ListItem>

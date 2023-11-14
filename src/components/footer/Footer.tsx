@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import {colorPalette, navOptions, socialMediaLinks} from '../../global-parameters/Parameters';
+import React, {useContext, useState} from 'react';
 import {AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography, useMediaQuery} from '@mui/material';
 import {SocialIcon} from 'react-social-icons';
 import {plantTheme} from '../../global-parameters/Theme';
 import {centerVertHoriz} from "../../global-parameters/Styles";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import {ParameterContext} from "../../App";
 
 interface FooterProps {
 }
@@ -15,6 +15,7 @@ const Footer: React.FC<FooterProps> = () => {
     const [showPortal, setShowPortal] = useState<boolean>(false);
     const currentPage = window.location.href.split('/')[3].toUpperCase();
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
+    const parameters = useContext(ParameterContext);
 
     const resetPassSequence = () => {
         setShowPortal(passSequence === 0.599);
@@ -37,11 +38,11 @@ const Footer: React.FC<FooterProps> = () => {
                             <Grid item xs={6} sx={centerVertHoriz}>
                                 <Button
                                     sx={{
-                                        color: colorPalette.textContrast,
-                                        backgroundColor: colorPalette.secondary,
+                                        color: parameters.colorPalette.textContrast,
+                                        backgroundColor: parameters.colorPalette.secondary,
                                         display: 'block',
                                         '&:hover': {
-                                            backgroundColor: colorPalette.secondary,
+                                            backgroundColor: parameters.colorPalette.secondary,
                                         },
                                     }}
                                 >
@@ -58,24 +59,25 @@ const Footer: React.FC<FooterProps> = () => {
                         <>
                             <Grid item xs={4} sx={centerVertHoriz}>
                                 <Stack flexGrow={1} sx={centerVertHoriz}>
-                                    <Typography color={colorPalette.text} variant="h5" onClick={resetPassSequence}>
+                                    <Typography color={parameters.colorPalette.text} variant="h5"
+                                                onClick={resetPassSequence}>
                                         {smallScreen ? '' : 'Navigation'}
                                     </Typography>
-                                    {navOptions.map((option, index) => (
+                                    {parameters.navOptions.map((option, index) => (
                                         <Link href={option} key={index}>
                                             <Typography
                                                 variant="subtitle1"
                                                 component="div"
                                                 sx={{
-                                                    color: currentPage === option.toUpperCase() ? colorPalette.secondary : colorPalette.text,
+                                                    color: currentPage === option.toUpperCase() ? parameters.colorPalette.secondary : parameters.colorPalette.text,
                                                     borderBottom:
                                                         currentPage === option.toUpperCase()
-                                                            ? `.1rem solid ${colorPalette.secondary}`
+                                                            ? `.1rem solid ${parameters.colorPalette.secondary}`
                                                             : currentPage === '' && option === 'home'
-                                                                ? `.1rem solid ${colorPalette.text}`
+                                                                ? `.1rem solid ${parameters.colorPalette.text}`
                                                                 : '',
                                                     '&:hover': {
-                                                        color: colorPalette.secondary,
+                                                        color: parameters.colorPalette.secondary,
                                                     },
                                                 }}
                                             >
@@ -87,11 +89,11 @@ const Footer: React.FC<FooterProps> = () => {
                             </Grid>
                             <Grid item xs={4} sx={centerVertHoriz}>
                                 <Stack>
-                                    <Typography color={colorPalette.text} variant="h5"
+                                    <Typography color={parameters.colorPalette.text} variant="h5"
                                                 onClick={() => setPassSequence(passSequence + 0.004)}>
                                         {smallScreen ? '' : 'Follow Me'}
                                     </Typography>
-                                    {socialMediaLinks.map((link, index) => (
+                                    {parameters.socialMediaLinks.map((link, index) => (
                                         <Box sx={{...centerVertHoriz, marginBottom: '.5rem'}} key={index}>
                                             <SocialIcon style={{width: '2rem', height: '2rem'}} url={link.url}
                                                         href={link.href}/>

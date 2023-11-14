@@ -1,27 +1,27 @@
 import {createTheme} from "@mui/material";
-import {colorPalette} from "./Parameters";
+import {globalParams} from "./Parameters";
 
 export const plantTheme = createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main: colorPalette.primary,
+            main: globalParams.colorPalette.primary,
         },
         secondary: {
-            main: colorPalette.secondary
+            main: globalParams.colorPalette.secondary
         }
 
     },
     typography: {
         fontFamily: 'poppins',
-        h1: {color: colorPalette.secondary},
-        h2: {color: colorPalette.secondary},
-        h3: {color: colorPalette.secondary},
-        h4: {color: colorPalette.secondary},
-        h5: {color: colorPalette.secondary},
-        h6: {color: colorPalette.secondary},
-        subtitle1: {color: colorPalette.secondary},
-        subtitle2: {color: colorPalette.secondary},
+        h1: {color: globalParams.colorPalette.secondary},
+        h2: {color: globalParams.colorPalette.secondary},
+        h3: {color: globalParams.colorPalette.secondary},
+        h4: {color: globalParams.colorPalette.secondary},
+        h5: {color: globalParams.colorPalette.secondary},
+        h6: {color: globalParams.colorPalette.secondary},
+        subtitle1: {color: globalParams.colorPalette.secondary},
+        subtitle2: {color: globalParams.colorPalette.secondary},
 
     },
 })
