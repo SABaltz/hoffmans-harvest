@@ -1,4 +1,4 @@
-import {secondaryColor, textContrastColor} from "../../global-parameters/Parameters";
+import {colorPalette} from "../../global-parameters/Parameters";
 import {Button, Link, Typography} from "@mui/material";
 import React from "react";
 import {ExitToApp} from "@mui/icons-material";
@@ -7,11 +7,11 @@ function Portal() {
     return (
         <Button
             sx={{
-                color: textContrastColor,
-                backgroundColor: secondaryColor,
+                color: colorPalette.textContrast,
+                backgroundColor: colorPalette.secondary,
                 display: 'block',
                 '&:hover': {
-                    backgroundColor: secondaryColor,
+                    backgroundColor: colorPalette.secondary,
                 }
             }}>
             <Link href={`/home`} sx={{textDecoration: 'none'}}>
