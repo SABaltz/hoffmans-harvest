@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {AppBar, Box, Button, Grid, Link, Menu, MenuItem, Toolbar, Typography, useMediaQuery,} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {plantTheme} from '../../global-parameters/Theme';
 import {colorPalette, navOptions, websiteName,} from '../../global-parameters/Parameters';
+import {ThemeContext} from "../../App";
 
 function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const currentPage = window.location.href.toString().split('/')[3].toUpperCase();
     const [anchorEl, setAnchorEl] = useState<HTMLElement | undefined>(undefined);
-
+    const theme = useContext(ThemeContext);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -115,8 +116,11 @@ function NavBar() {
                     </Toolbar>
                 </AppBar>
             )}
+            <div>{theme}</div>
         </Box>
-    );
+
+)
+    ;
 }
 
 export default NavBar;

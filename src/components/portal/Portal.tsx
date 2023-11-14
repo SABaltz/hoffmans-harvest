@@ -1,5 +1,5 @@
 import {colorPalette} from "../../global-parameters/Parameters";
-import {Box, Button, Card, CardContent, Link, TextField, Typography} from "@mui/material";
+import {Box, Button, Card, CardContent, Link, List, ListItem, TextField, Typography} from "@mui/material";
 import React from "react";
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import {centerVertHoriz} from "../../global-parameters/Styles";
@@ -28,10 +28,15 @@ function Portal() {
             <Box sx={{width: '100vw', ...centerVertHoriz, marginTop: '2rem'}}>
                 <Card sx={{width: '90vw', backgroundColor: colorPalette.secondary, ...centerVertHoriz}}>
                     <CardContent>
-                        <TextField id="outlined-basic" label="Outlined" variant="outlined"
-                                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                                       console.log(event.target.value);
-                                   }}/>
+                        <List>
+                            <ListItem>
+                                <TextField id="outlined-basic" label="Outlined" variant="outlined"
+                                           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                                               console.log(event.target.value);
+                                           }}/>
+                            </ListItem>
+                        </List>
+
                     </CardContent>
                 </Card>
             </Box>

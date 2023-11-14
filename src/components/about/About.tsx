@@ -12,7 +12,6 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = () => {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
-
     const imageStyle: React.CSSProperties = {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
