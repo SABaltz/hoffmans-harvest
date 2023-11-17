@@ -1,20 +1,18 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import plantPhone from '../../static/plant-phone.jpg';
 import {Card, CardContent, Grid, Typography, useMediaQuery} from '@mui/material';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import {plantTheme} from '../../global-parameters/Theme';
-import {ParameterContext} from "../../App";
 
 
-const Contact = () => {
+const Contact = ({parameters}) => {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const recipientEmail = 'hoffman@hoffman.com';
     const subject = '';
     const body = '';
     const mailToLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    const parameters = useContext(ParameterContext);
     const handleEmailClick = () => {
         window.location.href = mailToLink;
     };

@@ -1,14 +1,12 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import {AppBar, Box, Button, Grid, Link, Menu, MenuItem, Toolbar, Typography, useMediaQuery,} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {plantTheme} from '../../global-parameters/Theme';
-import {ParameterContext} from "../../App";
 
-function NavBar() {
+function NavBar({parameters}) {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const currentPage = window.location.href.toString().split('/')[3].toUpperCase();
     const [anchorEl, setAnchorEl] = useState(undefined);
-    const parameters = useContext(ParameterContext);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };

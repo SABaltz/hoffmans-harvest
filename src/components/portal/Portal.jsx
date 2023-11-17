@@ -1,11 +1,9 @@
 import {Box, Button, Card, CardContent, Link, List, ListItem, TextField, Typography} from "@mui/material";
-import React, {useContext} from "react";
+import React from "react";
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import {centerVertHoriz} from "../../global-parameters/Styles";
-import {ParameterContext} from "../../App";
 
-function Portal() {
-    const parameters = useContext(ParameterContext);
+function Portal({parameters}) {
     return (
 
         <Box sx={{width: '100vw', height: '100vh', backgroundColor: parameters.colorPalette.primary}}>

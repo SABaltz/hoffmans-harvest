@@ -1,13 +1,11 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Box, Grid} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import {SocialIcon} from 'react-social-icons';
 import terrariumWall from "../../static/terranium-wallpaper.webp";
 import {centerVertHoriz} from '../../global-parameters/Styles';
-import {ParameterContext} from "../../App";
 
-const HomePage = () => {
-    const parameters = useContext(ParameterContext);
+const HomePage = ({parameters}) => {
     return (
         <>
             <Box

@@ -1,15 +1,13 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Box, Card, CardContent, Grid, Stack, Typography, useMediaQuery} from '@mui/material';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {plantTheme} from '../../global-parameters/Theme';
 import plantWall from '../../static/plant-work-background.webp';
 import terrarium from '../../static/terrarium.jpg';
-import {ParameterContext} from "../../App";
 
 
-function WorkCard({title, description, imageUrl, order}) {
+function WorkCard({title, description, imageUrl, order, parameters}) {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
-    const parameters = useContext(ParameterContext);
     return (
         <Box sx={{paddingTop: '3rem'}}>
             <Card sx={{width: '90vw', backgroundColor: parameters.colorPalette.secondary}}>
@@ -48,7 +46,7 @@ function WorkCard({title, description, imageUrl, order}) {
     );
 }
 
-function Work() {
+function Work({parameters}) {
     return (
         <Box
             sx={{
@@ -65,18 +63,21 @@ function Work() {
         >
             <Stack>
                 <WorkCard
+                    parameters={parameters}
                     title="Terrariums"
                     description="All of our terrariums consist of handpicked exotic plants suited to persist in the cold Alaskan weather."
                     imageUrl={terrarium}
                     order={[0, 1]}
                 />
                 <WorkCard
+                    parameters={parameters}
                     title="Vivariums"
                     description="All of our vivariums consist of handpicked exotic plants suited to persist in the cold Alaskan weather."
                     imageUrl={terrarium}
                     order={[1, 0]}
                 />
                 <WorkCard
+                    parameters={parameters}
                     title="Aquascapes"
                     description="All of our aquascapes consist of handpicked exotic plants suited to persist in the cold Alaskan weather."
                     imageUrl={terrarium}

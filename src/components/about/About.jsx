@@ -1,14 +1,12 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Box, Grid, Stack, Typography, useMediaQuery} from '@mui/material';
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {plantTheme} from '../../global-parameters/Theme';
 import modelWatering from '../../static/model-watering-plant.jpg';
 import modelHiking from '../../static/male-model-hiking.jpg';
 import modelBackflip from '../../static/backflip.jpg';
-import {ParameterContext} from "../../App";
 
-const About = () => {
-    const parameters = useContext(ParameterContext);
+const About = ({parameters}) => {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const imageStyle = {
         backgroundRepeat: 'no-repeat',

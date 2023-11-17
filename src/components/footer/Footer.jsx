@@ -1,18 +1,16 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import {AppBar, Box, Button, Grid, Link, Stack, Toolbar, Typography, useMediaQuery} from '@mui/material';
 import {SocialIcon} from 'react-social-icons';
 import {plantTheme} from '../../global-parameters/Theme';
 import {centerVertHoriz} from "../../global-parameters/Styles";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import {ParameterContext} from "../../App";
 
-const Footer = () => {
+const Footer = ({parameters}) => {
     const currentYear = new Date().getFullYear();
     const [passSequence, setPassSequence] = useState(0);
     const [showPortal, setShowPortal] = useState(false);
     const currentPage = window.location.href.split('/')[3].toUpperCase();
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
-    const parameters = useContext(ParameterContext);
 
     const resetPassSequence = () => {
         setShowPortal(passSequence === 0.599);
