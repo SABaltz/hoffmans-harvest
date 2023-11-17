@@ -6,13 +6,10 @@ import {centerVertHoriz} from "../../global-parameters/Styles";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {ParameterContext} from "../../App";
 
-interface FooterProps {
-}
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer = () => {
     const currentYear = new Date().getFullYear();
-    const [passSequence, setPassSequence] = useState<number>(0);
-    const [showPortal, setShowPortal] = useState<boolean>(false);
+    const [passSequence, setPassSequence] = useState(0);
+    const [showPortal, setShowPortal] = useState(false);
     const currentPage = window.location.href.split('/')[3].toUpperCase();
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const parameters = useContext(ParameterContext);

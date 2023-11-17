@@ -7,10 +7,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import {plantTheme} from '../../global-parameters/Theme';
 import {ParameterContext} from "../../App";
 
-interface ContactProps {
-}
 
-const Contact: React.FC<ContactProps> = () => {
+const Contact = () => {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const recipientEmail = 'hoffman@hoffman.com';
     const subject = '';

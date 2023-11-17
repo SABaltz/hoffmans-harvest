@@ -33,7 +33,7 @@ function Portal() {
                         <List>
                             <ListItem>
                                 <TextField id="outlined-basic" label="Outlined" variant="outlined"
-                                           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                                           onChange={(event) => {
                                                console.log(event.target.value);
                                            }}/>
                             </ListItem>

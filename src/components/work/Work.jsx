@@ -6,14 +6,8 @@ import plantWall from '../../static/plant-work-background.webp';
 import terrarium from '../../static/terrarium.jpg';
 import {ParameterContext} from "../../App";
 
-interface WorkCardProps {
-    title: string;
-    description: string;
-    imageUrl: string;
-    order: number[];
-}
 
-function WorkCard({title, description, imageUrl, order}: WorkCardProps) {
+function WorkCard({title, description, imageUrl, order}) {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const parameters = useContext(ParameterContext);
     return (

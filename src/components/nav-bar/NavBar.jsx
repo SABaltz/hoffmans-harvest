@@ -7,9 +7,9 @@ import {ParameterContext} from "../../App";
 function NavBar() {
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
     const currentPage = window.location.href.toString().split('/')[3].toUpperCase();
-    const [anchorEl, setAnchorEl] = useState<HTMLElement | undefined>(undefined);
+    const [anchorEl, setAnchorEl] = useState(undefined);
     const parameters = useContext(ParameterContext);
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
 

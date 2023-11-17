@@ -6,7 +6,7 @@ import terrariumWall from "../../static/terranium-wallpaper.webp";
 import {centerVertHoriz} from '../../global-parameters/Styles';
 import {ParameterContext} from "../../App";
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
     const parameters = useContext(ParameterContext);
     return (
         <>

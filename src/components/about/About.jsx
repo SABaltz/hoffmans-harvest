@@ -7,13 +7,10 @@ import modelHiking from '../../static/male-model-hiking.jpg';
 import modelBackflip from '../../static/backflip.jpg';
 import {ParameterContext} from "../../App";
 
-interface AboutProps {
-}
-
-const About: React.FC<AboutProps> = () => {
+const About = () => {
     const parameters = useContext(ParameterContext);
     const smallScreen = !useMediaQuery(plantTheme.breakpoints.up('sm'));
-    const imageStyle: React.CSSProperties = {
+    const imageStyle = {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
@@ -23,7 +20,7 @@ const About: React.FC<AboutProps> = () => {
         marginBottom: smallScreen ? '1rem' : '3rem',
     };
 
-    const renderImageBox = (image: string) => (
+    const renderImageBox = (image) => (
         <Box sx={{...imageStyle, backgroundImage: `url(${image})`}}></Box>
     );
 
