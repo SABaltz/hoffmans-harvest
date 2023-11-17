@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ThemeProvider} from '@mui/material';
 import {plantTheme} from './global-parameters/Theme';
 import NavBar from './components/nav-bar/NavBar';
@@ -13,20 +13,21 @@ import {globalParams} from "./global-parameters/Parameters";
 
 
 function App() {
+    let [parameters, setParameters] = useState(globalParams)
     return (
         <ThemeProvider theme={plantTheme}>
-            <NavBar parameters={globalParams}/>
+            <NavBar parameters={parameters}/>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Navigate to="/home"/>}/>
-                    <Route path="/home" element={<HomePage parameters={globalParams}/>}/>
-                    <Route path="/about" element={<About parameters={globalParams}/>}/>
-                    <Route path="/work" element={<Work parameters={globalParams}/>}/>
-                    <Route path="/contact" element={<Contact parameters={globalParams}/>}/>
-                    <Route path="/portal" element={<Portal parameters={globalParams}/>}/>
+                    <Route path="/home" element={<HomePage parameters={parameters}/>}/>
+                    <Route path="/about" element={<About parameters={parameters}/>}/>
+                    <Route path="/work" element={<Work parameters={parameters}/>}/>
+                    <Route path="/contact" element={<Contact parameters={parameters}/>}/>
+                    <Route path="/portal" element={<Portal parameters={parameters} setParameters={setParameters}/>}/>
                 </Routes>
             </BrowserRouter>
-            <Footer parameters={globalParams}/>
+            <Footer parameters={parameters}/>
         </ThemeProvider>
     );
 }

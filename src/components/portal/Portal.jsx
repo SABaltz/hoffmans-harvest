@@ -3,7 +3,7 @@ import React from "react";
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import {centerVertHoriz} from "../../global-parameters/Styles";
 
-function Portal({parameters}) {
+function Portal({parameters, setParameters}) {
     return (
 
         <Box sx={{width: '100vw', height: '100vh', backgroundColor: parameters.colorPalette.primary}}>
@@ -32,7 +32,16 @@ function Portal({parameters}) {
                             <ListItem>
                                 <TextField id="outlined-basic" label="Outlined" variant="outlined"
                                            onChange={(event) => {
-                                               console.log(event.target.value);
+                                               setParameters({
+                                                   ...parameters, colorPalette: {
+                                                       primary: event.target.value,
+                                                       secondary: '#88e17c',
+                                                       tertiary: '#bfc432',
+                                                       hover: '#2a7310',
+                                                       text: '#dcdcdc',
+                                                       textContrast: '#000000',
+                                                   }
+                                               })
                                            }}/>
                             </ListItem>
                         </List>
