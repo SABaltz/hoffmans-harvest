@@ -1,4 +1,4 @@
-import {Box, Button, Card, CardContent, Link, List, ListItem, TextField, Typography} from "@mui/material";
+import {Box, Button, Card, CardContent, Grid, Link, TextField, Typography} from "@mui/material";
 import React from "react";
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import {centerVertHoriz} from "../../global-parameters/Styles";
@@ -28,23 +28,49 @@ function Portal({parameters, setParameters}) {
             <Box sx={{width: '100vw', ...centerVertHoriz, marginTop: '2rem'}}>
                 <Card sx={{width: '90vw', backgroundColor: parameters.colorPalette.secondary, ...centerVertHoriz}}>
                     <CardContent>
-                        <List>
-                            <ListItem>
+                        <Grid container sx={{...centerVertHoriz}}>
+
+
+                            <Grid item xs={6}>
+                                <Typography>Primary Color</Typography>
+                            </Grid>
+                            <Grid item xs={6} sx={{marginBottom: '2rem'}}>
                                 <TextField id="outlined-basic" label="Outlined" variant="outlined"
                                            onChange={(event) => {
                                                setParameters({
                                                    ...parameters, colorPalette: {
                                                        primary: event.target.value,
-                                                       secondary: '#88e17c',
-                                                       tertiary: '#bfc432',
-                                                       hover: '#2a7310',
-                                                       text: '#dcdcdc',
-                                                       textContrast: '#000000',
+                                                       secondary: parameters.colorPalette.secondary,
+                                                       tertiary: parameters.colorPalette.tertiary,
+                                                       hover: parameters.colorPalette.hover,
+                                                       text: parameters.colorPalette.text,
+                                                       textContrast: parameters.colorPalette.textContrast,
                                                    }
                                                })
                                            }}/>
-                            </ListItem>
-                        </List>
+                            </Grid>
+
+
+                            <Grid item xs={6}>
+                                <Typography>Secondary Color</Typography>
+                            </Grid>
+                            <Grid item xs={6} sx={{marginBottom: '2rem'}}>
+                                <TextField id="outlined-basic" label="Outlined" variant="outlined"
+                                           onChange={(event) => {
+                                               setParameters({
+                                                   ...parameters, colorPalette: {
+                                                       primary: parameters.colorPalette.primary,
+                                                       secondary: event.target.value,
+                                                       tertiary: parameters.colorPalette.tertiary,
+                                                       hover: parameters.colorPalette.hover,
+                                                       text: parameters.colorPalette.text,
+                                                       textContrast: parameters.colorPalette.textContrast,
+                                                   }
+                                               })
+                                           }}/>
+                            </Grid>
+                        </Grid>
+
 
                     </CardContent>
                 </Card>
