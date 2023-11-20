@@ -5,33 +5,58 @@ import {centerVertHoriz} from "../../global-parameters/Styles";
 import {HexColorPicker} from "react-colorful";
 
 function Portal({parameters, setParameters}) {
+    const handleClearLocalStorage = () => {
+        localStorage.clear();
+        window.location.reload();
+    };
     return (
 
         <Box sx={{width: '100vw', height: 'fitContent', backgroundColor: parameters.colorPalette.primary}}>
 
-            <Button
-                sx={{
-                    color: parameters.colorPalette.textContrast,
-                    backgroundColor: parameters.colorPalette.secondary,
-                    display: 'block',
-                    '&:hover': {
-                        backgroundColor: parameters.colorPalette.secondary,
-                    },
-                    marginLeft: '1rem'
-                }}>
-                <Link href={`/home`} sx={{textDecoration: 'none'}}>
-                    <Typography sx={{display: 'flex', alignItems: 'center'}}>
-                        <KeyboardDoubleArrowLeftIcon/>
-                        Exit Portal
-                    </Typography>
-                </Link>
-            </Button>
+            <Grid container>
+                <Grid item xs={6} sx={{...centerVertHoriz}}>
+                    <Button
+                        sx={{
+                            color: parameters.colorPalette.textContrast,
+                            backgroundColor: parameters.colorPalette.secondary,
+                            display: 'block',
+                            '&:hover': {
+                                backgroundColor: parameters.colorPalette.secondary,
+                            },
+                            marginLeft: '1rem'
+                        }}>
+                        <Link href={`/home`} sx={{textDecoration: 'none'}}>
+                            <Typography sx={{display: 'flex', alignItems: 'center'}}>
+                                <KeyboardDoubleArrowLeftIcon/>
+                                Exit Portal
+                            </Typography>
+                        </Link>
+                    </Button>
+                </Grid>
+                <Grid item xs={6} sx={{...centerVertHoriz}}>
+                    <Button
+                        sx={{
+                            color: parameters.colorPalette.textContrast,
+                            backgroundColor: parameters.colorPalette.secondary,
+                            display: 'block',
+                            '&:hover': {
+                                backgroundColor: parameters.colorPalette.secondary,
+                            },
+                            marginLeft: '1rem'
+                        }}
+                        onClick={() => handleClearLocalStorage()}>
+                        <Typography sx={{display: 'flex', alignItems: 'center'}}>
+                            <KeyboardDoubleArrowLeftIcon/>
+                            Reset Colors
+                        </Typography>
+
+                    </Button>
+                </Grid>
+            </Grid>
             <Box sx={{width: '100vw', ...centerVertHoriz, marginTop: '2rem'}}>
                 <Card sx={{width: '90vw', backgroundColor: parameters.colorPalette.secondary, ...centerVertHoriz}}>
                     <CardContent>
                         <Grid container sx={{...centerVertHoriz}}>
-
-
                             <Grid item xs={6}>
                                 <Typography>Primary Color</Typography>
                             </Grid>
@@ -69,23 +94,23 @@ function Portal({parameters, setParameters}) {
                                 }}/>
                             </Grid>
 
-                            <Grid item xs={6}>
-                                <Typography>Tertiary Color</Typography>
-                            </Grid>
-                            <Grid item xs={6} sx={{marginBottom: '2rem'}}>
-                                <HexColorPicker color={parameters.colorPalette.tertiary} onChange={(color) => {
-                                    setParameters({
-                                        ...parameters, colorPalette: {
-                                            primary: parameters.colorPalette.primary,
-                                            secondary: parameters.colorPalette.secondary,
-                                            tertiary: color,
-                                            hover: parameters.colorPalette.hover,
-                                            text: parameters.colorPalette.text,
-                                            textContrast: parameters.colorPalette.textContrast,
-                                        }
-                                    })
-                                }}/>
-                            </Grid>
+                            {/*<Grid item xs={6}>*/}
+                            {/*    <Typography>Tertiary Color</Typography>*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={6} sx={{marginBottom: '2rem'}}>*/}
+                            {/*    <HexColorPicker color={parameters.colorPalette.tertiary} onChange={(color) => {*/}
+                            {/*        setParameters({*/}
+                            {/*            ...parameters, colorPalette: {*/}
+                            {/*                primary: parameters.colorPalette.primary,*/}
+                            {/*                secondary: parameters.colorPalette.secondary,*/}
+                            {/*                tertiary: color,*/}
+                            {/*                hover: parameters.colorPalette.hover,*/}
+                            {/*                text: parameters.colorPalette.text,*/}
+                            {/*                textContrast: parameters.colorPalette.textContrast,*/}
+                            {/*            }*/}
+                            {/*        })*/}
+                            {/*    }}/>*/}
+                            {/*</Grid>*/}
 
                             <Grid item xs={6}>
                                 <Typography>Hover Color</Typography>
@@ -140,10 +165,7 @@ function Portal({parameters, setParameters}) {
                                     })
                                 }}/>
                             </Grid>
-
                         </Grid>
-
-
                     </CardContent>
                 </Card>
             </Box>
