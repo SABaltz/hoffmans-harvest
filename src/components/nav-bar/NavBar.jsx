@@ -95,7 +95,7 @@ function NavBar({parameters}) {
                                     <Typography
                                         variant="h6"
                                         sx={{
-                                            color: currentPage === option.toUpperCase() ? parameters.colorPalette.secondary : parameters.colorPalette.text,
+                                            color: currentPage === option.toUpperCase() || (currentPage === '' && option === 'home') ? parameters.colorPalette.secondary : parameters.colorPalette.text,
                                             borderBottom:
                                                 currentPage === option.toUpperCase() || (currentPage === '' && option === 'home')
                                                     ? `.1rem solid ${parameters.colorPalette.secondary}`
