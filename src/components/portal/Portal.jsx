@@ -1,12 +1,13 @@
-import {Box, Button, Card, CardContent, Grid, Link, TextField, Typography} from "@mui/material";
+import {Box, Button, Card, CardContent, Grid, Link, Typography} from "@mui/material";
 import React from "react";
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import {centerVertHoriz} from "../../global-parameters/Styles";
+import {HexColorPicker} from "react-colorful";
 
 function Portal({parameters, setParameters}) {
     return (
 
-        <Box sx={{width: '100vw', height: '100vh', backgroundColor: parameters.colorPalette.primary}}>
+        <Box sx={{width: '100vw', height: 'fitContent', backgroundColor: parameters.colorPalette.primary}}>
 
             <Button
                 sx={{
@@ -35,19 +36,18 @@ function Portal({parameters, setParameters}) {
                                 <Typography>Primary Color</Typography>
                             </Grid>
                             <Grid item xs={6} sx={{marginBottom: '2rem'}}>
-                                <TextField id="outlined-basic" label="Outlined" variant="outlined"
-                                           onChange={(event) => {
-                                               setParameters({
-                                                   ...parameters, colorPalette: {
-                                                       primary: event.target.value,
-                                                       secondary: parameters.colorPalette.secondary,
-                                                       tertiary: parameters.colorPalette.tertiary,
-                                                       hover: parameters.colorPalette.hover,
-                                                       text: parameters.colorPalette.text,
-                                                       textContrast: parameters.colorPalette.textContrast,
-                                                   }
-                                               })
-                                           }}/>
+                                <HexColorPicker color={parameters.colorPalette.primary} onChange={(color) => {
+                                    setParameters({
+                                        ...parameters, colorPalette: {
+                                            primary: color,
+                                            secondary: parameters.colorPalette.secondary,
+                                            tertiary: parameters.colorPalette.tertiary,
+                                            hover: parameters.colorPalette.hover,
+                                            text: parameters.colorPalette.text,
+                                            textContrast: parameters.colorPalette.textContrast,
+                                        }
+                                    })
+                                }}/>
                             </Grid>
 
 
@@ -55,28 +55,98 @@ function Portal({parameters, setParameters}) {
                                 <Typography>Secondary Color</Typography>
                             </Grid>
                             <Grid item xs={6} sx={{marginBottom: '2rem'}}>
-                                <TextField id="outlined-basic" label="Outlined" variant="outlined"
-                                           onChange={(event) => {
-                                               setParameters({
-                                                   ...parameters, colorPalette: {
-                                                       primary: parameters.colorPalette.primary,
-                                                       secondary: event.target.value,
-                                                       tertiary: parameters.colorPalette.tertiary,
-                                                       hover: parameters.colorPalette.hover,
-                                                       text: parameters.colorPalette.text,
-                                                       textContrast: parameters.colorPalette.textContrast,
-                                                   }
-                                               })
-                                           }}/>
+                                <HexColorPicker color={parameters.colorPalette.secondary} onChange={(color) => {
+                                    setParameters({
+                                        ...parameters, colorPalette: {
+                                            primary: parameters.colorPalette.primary,
+                                            secondary: color,
+                                            tertiary: parameters.colorPalette.tertiary,
+                                            hover: parameters.colorPalette.hover,
+                                            text: parameters.colorPalette.text,
+                                            textContrast: parameters.colorPalette.textContrast,
+                                        }
+                                    })
+                                }}/>
                             </Grid>
+
+                            <Grid item xs={6}>
+                                <Typography>Tertiary Color</Typography>
+                            </Grid>
+                            <Grid item xs={6} sx={{marginBottom: '2rem'}}>
+                                <HexColorPicker color={parameters.colorPalette.tertiary} onChange={(color) => {
+                                    setParameters({
+                                        ...parameters, colorPalette: {
+                                            primary: parameters.colorPalette.primary,
+                                            secondary: parameters.colorPalette.secondary,
+                                            tertiary: color,
+                                            hover: parameters.colorPalette.hover,
+                                            text: parameters.colorPalette.text,
+                                            textContrast: parameters.colorPalette.textContrast,
+                                        }
+                                    })
+                                }}/>
+                            </Grid>
+
+                            <Grid item xs={6}>
+                                <Typography>Hover Color</Typography>
+                            </Grid>
+                            <Grid item xs={6} sx={{marginBottom: '2rem'}}>
+                                <HexColorPicker color={parameters.colorPalette.hover} onChange={(color) => {
+                                    setParameters({
+                                        ...parameters, colorPalette: {
+                                            primary: parameters.colorPalette.primary,
+                                            secondary: parameters.colorPalette.secondary,
+                                            tertiary: parameters.colorPalette.tertiary,
+                                            hover: color,
+                                            text: parameters.colorPalette.text,
+                                            textContrast: parameters.colorPalette.textContrast,
+                                        }
+                                    })
+                                }}/>
+                            </Grid>
+
+                            <Grid item xs={6}>
+                                <Typography>Text Color</Typography>
+                            </Grid>
+                            <Grid item xs={6} sx={{marginBottom: '2rem'}}>
+                                <HexColorPicker color={parameters.colorPalette.text} onChange={(color) => {
+                                    setParameters({
+                                        ...parameters, colorPalette: {
+                                            primary: parameters.colorPalette.primary,
+                                            secondary: parameters.colorPalette.secondary,
+                                            tertiary: parameters.colorPalette.tertiary,
+                                            hover: parameters.colorPalette.hover,
+                                            text: color,
+                                            textContrast: parameters.colorPalette.textContrast,
+                                        }
+                                    })
+                                }}/>
+                            </Grid>
+
+                            <Grid item xs={6}>
+                                <Typography>Text Contrast Color</Typography>
+                            </Grid>
+                            <Grid item xs={6} sx={{marginBottom: '2rem'}}>
+                                <HexColorPicker color={parameters.colorPalette.textContrast} onChange={(color) => {
+                                    setParameters({
+                                        ...parameters, colorPalette: {
+                                            primary: parameters.colorPalette.primary,
+                                            secondary: parameters.colorPalette.secondary,
+                                            tertiary: parameters.colorPalette.tertiary,
+                                            hover: parameters.colorPalette.hover,
+                                            text: parameters.colorPalette.text,
+                                            textContrast: color,
+                                        }
+                                    })
+                                }}/>
+                            </Grid>
+
                         </Grid>
 
 
                     </CardContent>
                 </Card>
             </Box>
-
-
         </Box>
     )
 }
