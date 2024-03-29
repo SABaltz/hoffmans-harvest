@@ -4,6 +4,8 @@ import {centerVertHoriz} from '../../global-parameters/Styles';
 import {plantTheme} from '../../global-parameters/Theme';
 import plantWall from '../../static/plant-work-background.webp';
 import terrarium from '../../static/terrarium.jpg';
+import aquaspace from '../../static/aquaspace.jpg';
+import vivarium from '../../static/vivariums.jpg';
 
 
 function WorkCard({title, description, imageUrl, order, parameters}) {
@@ -73,14 +75,14 @@ function Work({parameters}) {
                     parameters={parameters}
                     title="Vivariums"
                     description="All of our vivariums consist of handpicked exotic plants suited to persist in the cold Alaskan weather."
-                    imageUrl={terrarium}
+                    imageUrl={vivarium}
                     order={[1, 0]}
                 />
                 <WorkCard
                     parameters={parameters}
                     title="Aquascapes"
                     description="All of our aquascapes consist of handpicked exotic plants suited to persist in the cold Alaskan weather."
-                    imageUrl={terrarium}
+                    imageUrl={aquaspace}
                     order={[0, 1]}
                 />
             </Stack>
